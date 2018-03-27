@@ -34,6 +34,7 @@ class Index extends React.Component {
               <div className="zui-scroll">
                   <Tabs tabs={tabs}
                     initialPage={0}
+                    swipeable={false}
                     onChange={(tab, index) => { console.log('onChange', index, tab); }}
                     onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
                   >

@@ -18,11 +18,15 @@ import CanteenPicture from '../modules/diningService/canteenPicture/component/ca
 
 /* 出行指南 */ 
 
+/* 公共页面 */
+import Survey from '../modules/pub/survey/component/survey';
+
         // <route path="device/index" component={IndexDevice} />
 module.exports = (
     <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <route path="diningService/todayMenu" component={TodayMenu} />
         <route path="diningService/canteenPicture" component={CanteenPicture} />
+        <route path="pub/survey" component={Survey} />
     </Route>
 );
