@@ -1,7 +1,14 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
 
-import IndexDevice from '../../device/index/component/index';
+/* 就餐服务 */ 
+import DiningService from '../../diningService/index/component/index';
+
+/* 宿舍公寓 */ 
+import Residence from '../../residence/index/component/index';
+
+/* 出行指南 */ 
+import TravelGuide from '../../travelGuide/index/component/index';
 
 export default class Home extends React.Component {
     constructor(props) {
@@ -14,16 +21,6 @@ export default class Home extends React.Component {
         };
     }
 
-    renderContent(pageText) {
-        return (
-            <div style={{ backgroundColor: 'white', textAlign: 'center' }}>
-                <div style={{ paddingTop: 60 }}>Clicked “{pageText}” tab， show “{pageText}” information</div>
-            </div>
-        );
-    }
-// <div>
-                //     {this.props.children}
-                // </div>
     render() {
         return (
             <div>
@@ -58,7 +55,7 @@ export default class Home extends React.Component {
                     }}
                     data-seed="logId"
                   >
-                    <IndexDevice />
+                    <DiningService />
                   </TabBar.Item>
                   <TabBar.Item
                     icon={
@@ -85,7 +82,7 @@ export default class Home extends React.Component {
                       });
                     }}
                   >
-                    {this.renderContent('Friend')}
+                    <Residence />
                   </TabBar.Item>
                   <TabBar.Item
                     icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
@@ -99,7 +96,7 @@ export default class Home extends React.Component {
                       });
                     }}
                   >
-                    {this.renderContent('My')}
+                    <TravelGuide />
                   </TabBar.Item>
                 </TabBar>
                 </div>

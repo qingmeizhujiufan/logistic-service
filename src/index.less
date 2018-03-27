@@ -18,11 +18,7 @@ body {
 }
 
 .am-navbar {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    z-index: 20;
+    position: relative;
 }
 
 .am-navbar-light {
@@ -130,6 +126,17 @@ body {
 .card-list .list-view-section-body {
     padding: 10px;
     background-color: #f5f5f8;
+}
+
+.am-tabs-horizontal {
+    
+    .am-tabs-pane-wrap-active {
+        display: block;
+    } 
+
+    .am-tabs-pane-wrap-inactive {
+        display: none;
+    }
 }
 
 .zui-content {
