@@ -8,9 +8,11 @@ import {Route, IndexRoute,IndexRedirect} from 'react-router';
 import App from '../modules/App';
 
 /* 首页 */
-import home from '../modules/home/component/home';
+import Home from '../modules/home/component/home';
 
-/* 就餐服务 */ 
+/* 就餐服务 */
+import TodayMenu from '../modules/diningService/todayMenu/component/todayMenu';
+import CanteenPicture from '../modules/diningService/canteenPicture/component/canteenPicture';
 
 /* 宿舍公寓 */ 
 
@@ -19,6 +21,8 @@ import home from '../modules/home/component/home';
         // <route path="device/index" component={IndexDevice} />
 module.exports = (
     <Route path="/" component={App}>
-        <IndexRoute component={home}/>
+        <IndexRoute component={Home}/>
+        <route path="diningService/todayMenu" component={TodayMenu} />
+        <route path="diningService/canteenPicture" component={CanteenPicture} />
     </Route>
 );
