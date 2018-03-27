@@ -6,9 +6,6 @@ const data = [
   {
     text: '设备项目组',
     link: '/device/index'
-  },{
-    text: '设备供应商',
-    link: '/deviceProvider/index'
   }];
 
 class Index extends React.Component {
