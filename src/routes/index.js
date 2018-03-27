@@ -4,7 +4,7 @@ import {Route, IndexRoute,IndexRedirect} from 'react-router';
 import App from '../modules/App';
 
 /* 公共首页 */
-import Index from '../modules/pub/index/component/index';
+import home from '../modules/home/component/home';
 
 /* 设备项目部
  *  create by zhongzheng
@@ -14,7 +14,7 @@ import IndexDevice from '../modules/device/index/component/index';
 
 module.exports = (
     <Route path="/" component={App}>
-        <IndexRoute component={Index}/>
+        <IndexRoute component={home}/>
         <route path="device/index" component={IndexDevice} />
     </Route>
 );

@@ -143,9 +143,6 @@ class Index extends React.Component {
       <div>
         <NavBar
           mode="light"
-          icon={<Icon type="left" />}
-          leftContent="返回" 
-          onLeftClick={this.callback}
         >设备项目组管理</NavBar>
         <div className='zui-content index zui-scroll-wrapper'>
           <div className="zui-scroll">
