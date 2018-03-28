@@ -1,6 +1,13 @@
 import React from 'react';
 import { TabBar } from 'antd-mobile';
 
+import index_1 from 'Img/index_1.png';
+import index_2 from 'Img/index_2.png';
+import index_3 from 'Img/index_3.png';
+import index_1_active from 'Img/index_1_active.png';
+import index_2_active from 'Img/index_2_active.png';
+import index_3_active from 'Img/index_3_active.png';
+
 /* 就餐服务 */ 
 import DiningService from '../../diningService/index/component/index';
 
@@ -34,47 +41,46 @@ export default class Home extends React.Component {
                   <TabBar.Item
                     title="就餐服务"
                     key="Life"
-                    icon={<div style={{
-                      width: '22px',
-                      height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/sifuoDUQdAFKAVcFGROC.svg) center center /  21px 21px no-repeat' }}
+                    icon={<img style={{
+                        width: '22px',
+                        height: '22px',
+                      }}
+                      src={index_1}
                     />
                     }
-                    selectedIcon={<div style={{
-                      width: '22px',
-                      height: '22px',
-                      background: 'url(https://zos.alipayobjects.com/rmsportal/iSrlOTqrKddqbOmlvUfq.svg) center center /  21px 21px no-repeat' }}
+                    selectedIcon={<img style={{
+                        width: '22px',
+                        height: '22px',
+                      }}
+                      src={index_1_active}
                     />
                     }
                     selected={this.state.selectedTab === 'blueTab'}
-                    badge={1}
                     onPress={() => {
                       this.setState({
                         selectedTab: 'blueTab',
                       });
                     }}
-                    data-seed="logId"
                   >
                     <DiningService />
                   </TabBar.Item>
                   <TabBar.Item
-                    icon={
-                      <div style={{
+                    icon={<img style={{
                         width: '22px',
                         height: '22px',
-                        background: 'url(https://zos.alipayobjects.com/rmsportal/psUFoAMjkCcjqtUCNPxB.svg) center center /  21px 21px no-repeat' }}
-                      />
+                      }}
+                      src={index_2}
+                    />
                     }
-                    selectedIcon={
-                      <div style={{
+                    selectedIcon={<img style={{
                         width: '22px',
                         height: '22px',
-                        background: 'url(https://zos.alipayobjects.com/rmsportal/IIRLrXXrFAhXVdhMWgUI.svg) center center /  21px 21px no-repeat' }}
-                      />
+                      }}
+                      src={index_2_active}
+                    />
                     }
                     title="宿舍公寓"
                     key="Friend"
-                    dot
                     selected={this.state.selectedTab === 'greenTab'}
                     onPress={() => {
                       this.setState({
@@ -85,8 +91,20 @@ export default class Home extends React.Component {
                     <Residence />
                   </TabBar.Item>
                   <TabBar.Item
-                    icon={{ uri: 'https://zos.alipayobjects.com/rmsportal/asJMfBrNqpMMlVpeInPQ.svg' }}
-                    selectedIcon={{ uri: 'https://zos.alipayobjects.com/rmsportal/gjpzzcrPMkhfEqgbYvmN.svg' }}
+                    icon={<img style={{
+                        width: '22px',
+                        height: '22px',
+                      }}
+                      src={index_3}
+                    />
+                    }
+                    selectedIcon={<img style={{
+                        width: '22px',
+                        height: '22px',
+                      }}
+                      src={index_3_active}
+                    />
+                    }
                     title="出行指南"
                     key="my"
                     selected={this.state.selectedTab === 'yellowTab'}
