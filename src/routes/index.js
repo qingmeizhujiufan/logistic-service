@@ -19,14 +19,23 @@ import CanteenPicture from '../modules/diningService/canteenPicture/component/ca
 /* 出行指南 */ 
 
 /* 公共页面 */
+//满意度调查
 import Survey from '../modules/pub/survey/component/survey';
+//企业文化
+import BusinessCulture from '../modules/pub/businessCulture/component/businessCulture';
+//节日活动
+import Holidays from '../modules/pub/holidays/component/holidays';
+//企业相册
+import EnterpriseAlbum from '../modules/pub/enterpriseAlbum/component/enterpriseAlbum';
 
-        // <route path="device/index" component={IndexDevice} />
 module.exports = (
     <Route path="/" component={App}>
         <IndexRoute component={Home}/>
         <route path="diningService/todayMenu" component={TodayMenu} />
         <route path="diningService/canteenPicture" component={CanteenPicture} />
         <route path="pub/survey" component={Survey} />
+        <route path="pub/businessCulture" component={BusinessCulture} />
+        <route path="pub/holidays" component={Holidays} />
+        <route path="pub/enterpriseAlbum" component={EnterpriseAlbum} />
     </Route>
 );
