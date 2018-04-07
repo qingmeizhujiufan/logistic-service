@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Tabs, Card, WingBlank, WhiteSpace } from 'antd-mobile';
+import { Button, Flex, WingBlank, WhiteSpace } from 'antd-mobile';
 import '../index.less';
 //引入图片
 import todayMenu from 'Img/today-menu.jpg';
@@ -14,6 +14,7 @@ class Index extends React.Component {
         super(props);
         
         this.state = {
+          floor: 1,
         };
     }
   
@@ -25,90 +26,35 @@ class Index extends React.Component {
     }
 
     render() {
-        return (
-          <div>
-            <NavBar
-              mode="light"
-            >就餐服务</NavBar>
-            <div className='zui-content index zui-scroll-wrapper'>
-              <div className="zui-scroll">
-                  <Tabs tabs={tabs}
-                    initialPage={0}
-                    swipeable={false}
-                    onChange={(tab, index) => { console.log('onChange', index, tab); }}
-                    onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
-                  >
-                    <div>
-                        <WingBlank size="lg">
-                            <WhiteSpace size="lg" />
-                            <Card onClick={() => this.btnClick('/diningService/todayMenu')}>
-                                <Card.Header
-                                  title="今日菜单"
-                                  thumb={todayMenu}
-                                />
-                                <Card.Body>
-                                  <div>丰盛的饭菜，绝对吊足你们的胃口，快来看看吧~</div>
-                                </Card.Body>
-                            </Card>
-                        </WingBlank>
-                        <WingBlank size="lg">
-                            <WhiteSpace size="lg" />
-                            <Card onClick={() => this.btnClick('/diningService/canteenPicture')}>
-                                <Card.Header
-                                  title="食堂画面"
-                                  thumb={todayMenu}
-                                />
-                                <Card.Body>
-                                  <div>一睹干净、卫生的食堂吧~</div>
-                                </Card.Body>
-                            </Card>
-                        </WingBlank>
-                        <WingBlank size="lg">
-                            <WhiteSpace size="lg" />
-                            <Card>
-                                <Card.Header
-                                  title="满意度调查"
-                                  thumb={todayMenu}
-                                />
-                                <Card.Body>
-                                  <div>一睹干净、卫生的食堂吧~</div>
-                                </Card.Body>
-                            </Card>
-                        </WingBlank>
-                        <WingBlank size="lg">
-                            <WhiteSpace size="lg" />
-                            <Card>
-                                <Card.Header
-                                  title="健康饮食"
-                                  thumb={todayMenu}
-                                />
-                                <Card.Body>
-                                  <div>一睹干净、卫生的食堂吧~</div>
-                                </Card.Body>
-                            </Card>
-                        </WingBlank>
-                        <WingBlank size="lg">
-                            <WhiteSpace size="lg" />
-                            <Card>
-                                <Card.Header
-                                  title="失误招领"
-                                  thumb={todayMenu}
-                                />
-                                <Card.Body>
-                                  <div>一睹干净、卫生的食堂吧~</div>
-                                </Card.Body>
-                            </Card>
-                        </WingBlank>
-                        <WhiteSpace size="lg" />
-                    </div>
-                    <div>
-                      Content of second tab
-                    </div>
-                  </Tabs>
-              </div>   
-            </div>
+      let { floor } = this.state;
+      let floor_first_headerclass = `tab-button ${floor === 1 ? 'active' : ''}`;
+      let floor_second_headerclass = `tab-button ${floor === 2 ? 'active' : ''}`;
+
+      return (
+        <div className="diningService">
+          <div className='zui-content zui-scroll-wrapper'>
+            <div className="zui-scroll">
+              <div className="tab-button-group">
+                <span className={floor_first_headerclass}>一楼食堂</span>
+                <span className={floor_second_headerclass}>二楼食堂</span>
+              </div>
+              <Flex justify="between">
+                <h1 style={{fontSize: 20}}>就餐服务</h1>
+                <span style={{fontSize: 14, color: '#888'}}>企业官网-></span>
+              </Flex>
+              <ul className="zui-list-unstyled card-list">
+                <li>
+                  <div className="wrap-img">
+                    <img src={todayMenu} />
+                  </div>
+                  <div className="title">今日菜单</div>
+                  <div className="desc">丰盛的饭菜，绝对吊足你的胃口</div>
+                </li>
+              </ul>
+            </div>   
           </div>
-        );
+        </div>
+      );
     }
 }
 
