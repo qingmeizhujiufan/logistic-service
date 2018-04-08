@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import './cardList.less';
 
 class CardList extends React.Component {
@@ -47,4 +48,4 @@ CardList.contextTypes = {
     router:React.PropTypes.object  
 } 
 
-export default  CardList;
+export default connect()(CardList);

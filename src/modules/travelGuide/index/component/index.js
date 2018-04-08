@@ -5,7 +5,9 @@ import '../index.less';
 //引入自定义组件
 import CardList from '../../../../components/cardList/cardList';
 //引入图片
-import todayMenu from 'Img/today-menu.jpg';
+// import entertainmentNavigation from 'Img/entertainment-navigation.jpg';
+import busInformation from 'Img/bus-information.jpg';
+import entertainmentNavigation from 'Img/entertainment-navigation.jpg';
 
 class Index extends React.Component {
     constructor(props) {
@@ -19,17 +21,17 @@ class Index extends React.Component {
               {
                 title: '到段导航',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: todayMenu,
+                preview: busInformation,
                 path: '/diningService/todayMenu'
               }, {
                 title: '班车信息',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: todayMenu,
+                preview: busInformation,
                 path: '/diningService/todayMenu'
               }, {
                 title: '娱乐点导航',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: todayMenu,
+                preview: entertainmentNavigation,
                 path: '/diningService/todayMenu'
               }
             ]

@@ -6,6 +6,9 @@ import '../index.less';
 import CardList from '../../../../components/cardList/cardList';
 //引入图片
 import todayMenu from 'Img/today-menu.jpg';
+import canteenPicture from 'Img/canteen-picture.jpg';
+import survey from 'Img/survey.jpg';
+import healthFood from 'Img/health-food.jpg';
 
 class Index extends React.Component {
     constructor(props) {
@@ -24,17 +27,17 @@ class Index extends React.Component {
               }, {
                 title: '食堂画面',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: todayMenu,
+                preview: canteenPicture,
                 path: '/diningService/todayMenu'
               }, {
                 title: '满意度调查',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: todayMenu,
+                preview: survey,
                 path: '/diningService/todayMenu'
               }, {
                 title: '健康饮食',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: todayMenu,
+                preview: healthFood,
                 path: '/diningService/todayMenu'
               }
             ]
@@ -47,10 +50,20 @@ class Index extends React.Component {
     }
   
     componentDidMount() {
+      const { todolist } = this.props;
+      console.log('this props === ', this.props);
+      console.log('todolist === ', todolist);
     }
 
     btnClick = (url) => {
       this.context.router.push(url);
+    }
+
+    changeTab = (index) => {
+      console.log('index === ', index);
+      this.setState({
+        floor: index
+      });
     }
 
     render() {
@@ -63,8 +76,8 @@ class Index extends React.Component {
           <div className='zui-scroll-wrapper'>
             <div className="zui-scroll">
               <div className="tab-button-group">
-                <span className={floor_first_headerclass}>一楼食堂</span>
-                <span className={floor_second_headerclass}>二楼食堂</span>
+                <span className={floor_first_headerclass} onClick={() => this.changeTab(1)}>一楼食堂</span>
+                <span className={floor_second_headerclass} onClick={() => this.changeTab(2)}>二楼食堂</span>
               </div>
               <Flex justify="between">
                 <h1 style={{fontSize: 20}}>就餐服务</h1>
@@ -79,7 +92,7 @@ class Index extends React.Component {
 }
 
 Index.contextTypes = {  
-    router:React.PropTypes.object  
+    router: React.PropTypes.object  
 } 
 
 export default  Index;
