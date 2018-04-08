@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Button, Flex, WingBlank, WhiteSpace } from 'antd-mobile';
 import '../index.less';
 //引入自定义组件
-import App from '../../../../containers/App';
+import App from '../../../../containers/cardList';
 //引入图片
 import todayMenu from 'Img/today-menu.jpg';
 import canteenPicture from 'Img/canteen-picture.jpg';
@@ -84,7 +84,7 @@ class Index extends React.Component {
                 <h1 style={{fontSize: 20}}>就餐服务</h1>
                 <span style={{fontSize: 14, color: '#888'}}>企业官网-></span>
               </Flex>
-              <App list={list} />
+              <App list={list} counter={100} />
             </div>   
           </div>
         </div>
