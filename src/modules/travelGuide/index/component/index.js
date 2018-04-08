@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 import { Button, Flex, WingBlank, WhiteSpace } from 'antd-mobile';
 import '../index.less';
 //引入自定义组件
-import CardList from '../../../../components/cardList/cardList';
+import CardList from '../../../../components/cardList';
 //引入图片
 // import entertainmentNavigation from 'Img/entertainment-navigation.jpg';
 import busInformation from 'Img/bus-information.jpg';

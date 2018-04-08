@@ -33,8 +33,8 @@ export default class Home extends React.Component {
             <div>
                 <div style={{position: 'fixed', bottom: 0, left: 0, right: 0, height: '100%'}}>
                 <TabBar
-                  unselectedTintColor="#949494"
-                  tintColor="#33A3F4"
+                  unselectedTintColor="#AAAFB9"
+                  tintColor="#3D3D3D"
                   barTintColor="white"
                   hidden={this.state.hidden}
                 >
@@ -43,19 +43,20 @@ export default class Home extends React.Component {
                     key="Life"
                     icon={<img style={{
                         width: '22px',
-                        height: '22px',
+                        height: '20px',
                       }}
                       src={index_1}
                     />
                     }
                     selectedIcon={<img style={{
                         width: '22px',
-                        height: '22px',
+                        height: '20px',
                       }}
                       src={index_1_active}
                     />
                     }
                     selected={this.state.selectedTab === 'blueTab'}
+                    className='active'
                     onPress={() => {
                       this.setState({
                         selectedTab: 'blueTab',
@@ -67,14 +68,14 @@ export default class Home extends React.Component {
                   <TabBar.Item
                     icon={<img style={{
                         width: '22px',
-                        height: '22px',
+                        height: '20px',
                       }}
                       src={index_2}
                     />
                     }
                     selectedIcon={<img style={{
                         width: '22px',
-                        height: '22px',
+                        height: '20px',
                       }}
                       src={index_2_active}
                     />
@@ -93,14 +94,14 @@ export default class Home extends React.Component {
                   <TabBar.Item
                     icon={<img style={{
                         width: '22px',
-                        height: '22px',
+                        height: '20px',
                       }}
                       src={index_3}
                     />
                     }
                     selectedIcon={<img style={{
                         width: '22px',
-                        height: '22px',
+                        height: '20px',
                       }}
                       src={index_3_active}
                     />

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
+import { connect } from 'react-redux';
 import { Button, Flex, WingBlank, WhiteSpace } from 'antd-mobile';
 import '../index.less';
 //引入自定义组件
-import CardList from '../../../../components/cardList/cardList';
+import App from '../../../../containers/App';
 //引入图片
 import todayMenu from 'Img/today-menu.jpg';
 import canteenPicture from 'Img/canteen-picture.jpg';
@@ -50,9 +51,9 @@ class Index extends React.Component {
     }
   
     componentDidMount() {
-      const { todolist } = this.props;
-      console.log('this props === ', this.props);
-      console.log('todolist === ', todolist);
+      const { store } = this.context;
+      const state = store.getState();
+      console.log('state == ', state);
     }
 
     btnClick = (url) => {
@@ -83,7 +84,7 @@ class Index extends React.Component {
                 <h1 style={{fontSize: 20}}>就餐服务</h1>
                 <span style={{fontSize: 14, color: '#888'}}>企业官网-></span>
               </Flex>
-              <CardList list={list} />
+              <App list={list} />
             </div>   
           </div>
         </div>
@@ -92,7 +93,8 @@ class Index extends React.Component {
 }
 
 Index.contextTypes = {  
-    router: React.PropTypes.object  
+  router: React.PropTypes.object,
+  store: React.PropTypes.object
 } 
 
-export default  Index;
+export default Index;
