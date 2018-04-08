@@ -1,9 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
-import { Button, Flex, WingBlank, WhiteSpace } from 'antd-mobile';
 import '../index.less';
 //引入自定义组件
-import CardList from '../../../../components/cardList';
+import MenuList from '../../../../containers/menuList';
 //引入图片
 // import entertainmentNavigation from 'Img/entertainment-navigation.jpg';
 import busInformation from 'Img/bus-information.jpg';
@@ -14,25 +13,24 @@ class Index extends React.Component {
         super(props);
         
         this.state = {
-          floor: 1,
-          list: {
-            floor: 1,
+          data: {
+            title: '出行指南',
             tabContent: [
               {
                 title: '到段导航',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: busInformation,
-                path: '/diningService/todayMenu'
+                path: '/diningService/todayMenu/'
               }, {
                 title: '班车信息',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: busInformation,
-                path: '/diningService/todayMenu'
+                path: '/diningService/todayMenu/'
               }, {
                 title: '娱乐点导航',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: entertainmentNavigation,
-                path: '/diningService/todayMenu'
+                path: '/diningService/todayMenu/'
               }
             ]
           }
@@ -51,17 +49,13 @@ class Index extends React.Component {
     }
 
     render() {
-      let { floor, list } = this.state;
+      let { data } = this.state;
 
       return (
         <div className="diningService">
           <div className='zui-scroll-wrapper'>
             <div className="zui-scroll">
-              <Flex justify="between" style={{margin: '25px 0'}}>
-                <h1 style={{fontSize: 20}}>出行指南</h1>
-                <span style={{fontSize: 14, color: '#888'}}>企业官网-></span>
-              </Flex>
-              <CardList list={list} />
+              <MenuList data={data} />
             </div>   
           </div>
         </div>

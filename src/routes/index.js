@@ -31,7 +31,7 @@ import EnterpriseAlbum from '../modules/pub/enterpriseAlbum/component/enterprise
 module.exports = (
     <Route path="/" component={App}>
         <IndexRoute component={Home}/>
-        <route path="diningService/todayMenu" component={TodayMenu} />
+        <route path="diningService/todayMenu/:floor" component={TodayMenu} />
         <route path="diningService/canteenPicture" component={CanteenPicture} />
         <route path="pub/survey" component={Survey} />
         <route path="pub/businessCulture" component={BusinessCulture} />

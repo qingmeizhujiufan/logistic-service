@@ -1,34 +1,68 @@
 import React from 'react';
 import { Link } from 'react-router';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { Flex } from 'antd-mobile';
 import './index.less';
 
 class CardList extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+          tabIndex: this.props.data.tabIndex
+        };
     }
   
     componentDidMount() {
-      // const { todolist } = this.props;
-      console.log('this props === ', this.props);
-      // console.log('todolist === ', todolist);
     }
 
     btnClick = (url) => {
       this.context.router.push(url);
     }
 
+    changeTab = (index) => {
+      console.log('index === ', index);
+      this.setState({
+        tabIndex: index
+      });
+    }
+
+    showTab = () => {
+      const { tabIndex } = this.state;
+      const { data } = this.props;
+      if(data.tabs){
+        return (
+          <div className="tab-button-group">
+          {
+            data.tabs.map((item, index) => {
+              const _class = `tab-button ${tabIndex === (index + 1) ? 'active' : ''}`;
+              return (
+                <span key={index} className={_class} onClick={() => this.changeTab(index + 1)}>{item.label}</span>
+              )
+            })
+          }
+          </div>
+        )
+      }
+    }
+
     render() {
-      const { list, increment, incrementIfOdd, incrementAsync, decrement, counter } = this.props;
+      const { tabIndex } = this.state;
+      const { data } = this.props;
 
       return (
-        <div>
+        <div>  
+          {this.showTab()}
+          <Flex justify="between" style={{marginTop: 20}}>
+            <h1 style={{fontSize: 20}}>{data.title}</h1>
+            <span style={{fontSize: 14, color: '#888'}}>企业官网-></span>
+          </Flex>
           <ul className="zui-list-unstyled card-list">
             {
-              (list ? list.tabContent : []).map((item, index) => {
+              data.tabContent.map((item, index) => {
                 return (
                   <li key={index}>
-                    <Link to={item.path}>
+                    <Link to={item.path + tabIndex}>
                       <div className="wrap-img">
                         <img src={item.preview} />
                       </div>
@@ -40,17 +74,6 @@ class CardList extends React.Component {
               })
             }
           </ul>
-          <p>
-            Clicked: {counter} times
-            {' '}
-            <button onClick={increment}>+</button>
-            {' '}
-            <button onClick={decrement}>-</button>
-            {' '}
-            <button onClick={incrementIfOdd}>Increment if odd</button>
-            {' '}
-            <button onClick={() => incrementAsync()}>Increment async</button>
-          </p>
         </div>
       );
     }

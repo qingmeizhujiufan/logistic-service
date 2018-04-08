@@ -9,34 +9,41 @@ import index_2_active from 'Img/index_2_active.png';
 import index_3_active from 'Img/index_3_active.png';
 
 /* 就餐服务 */ 
-import DiningService from '../../diningService/index/component/index';
+import DiningService from '../../diningService/index/component';
 
 /* 宿舍公寓 */ 
-import Residence from '../../residence/index/component/index';
+import Residence from '../../residence/index/component';
 
 /* 出行指南 */ 
-import TravelGuide from '../../travelGuide/index/component/index';
+import TravelGuide from '../../travelGuide/index/component';
 
 export default class Home extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-          selectedTab: 'blueTab',
-          hidden: false,
-          fullScreen: false,
+          selectedTab: '1'
         };
+    }
+
+    componentWillMount() {
+      if(sessionStorage.getItem('selectedTab')){
+        this.setState({
+          selectedTab: sessionStorage.getItem('selectedTab')
+        });
+      }else {
+        sessionStorage.setItem('selectedTab', '1');
+      }
     }
 
     render() {
         return (
             <div>
-                <div style={{position: 'fixed', bottom: 0, left: 0, right: 0, height: '100%'}}>
+              <div style={{position: 'fixed', bottom: 0, left: 0, right: 0, height: '100%'}}>
                 <TabBar
                   unselectedTintColor="#AAAFB9"
                   tintColor="#3D3D3D"
                   barTintColor="white"
-                  hidden={this.state.hidden}
                 >
                   <TabBar.Item
                     title="就餐服务"
@@ -55,12 +62,13 @@ export default class Home extends React.Component {
                       src={index_1_active}
                     />
                     }
-                    selected={this.state.selectedTab === 'blueTab'}
+                    selected={this.state.selectedTab === '1'}
                     className='active'
                     onPress={() => {
                       this.setState({
-                        selectedTab: 'blueTab',
+                        selectedTab: '1',
                       });
+                      sessionStorage.setItem('selectedTab', '1');
                     }}
                   >
                     <DiningService />
@@ -82,11 +90,12 @@ export default class Home extends React.Component {
                     }
                     title="宿舍公寓"
                     key="Friend"
-                    selected={this.state.selectedTab === 'greenTab'}
+                    selected={this.state.selectedTab === '2'}
                     onPress={() => {
                       this.setState({
-                        selectedTab: 'greenTab',
+                        selectedTab: '2',
                       });
+                      sessionStorage.setItem('selectedTab', '2');
                     }}
                   >
                     <Residence />
@@ -108,17 +117,18 @@ export default class Home extends React.Component {
                     }
                     title="出行指南"
                     key="my"
-                    selected={this.state.selectedTab === 'yellowTab'}
+                    selected={this.state.selectedTab === '3'}
                     onPress={() => {
                       this.setState({
-                        selectedTab: 'yellowTab',
+                        selectedTab: '3',
                       });
+                      sessionStorage.setItem('selectedTab', '3');
                     }}
                   >
                     <TravelGuide />
                   </TabBar.Item>
                 </TabBar>
-                </div>
+              </div>
             </div>
         );
     }
