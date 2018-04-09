@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavBar, Icon, List, Radio, InputItem, TextareaItem, Toast, Button, WhiteSpace, WingBlank } from 'antd-mobile';
-import '../survey.less';
+import '../index.less';
 
 const RadioItem = Radio.RadioItem;
 const data = [

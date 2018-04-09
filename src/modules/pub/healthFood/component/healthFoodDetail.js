@@ -1,8 +1,11 @@
 import React from 'react';
-import { NavBar, Icon, Card, WingBlank, WhiteSpace } from 'antd-mobile';
-import '../canteenPicture.less';
+import { NavBar, Icon, Card, WingBlank, WhiteSpace, List } from 'antd-mobile';
+import '../index.less';
+import HealthFood from 'Img/health-food.jpg';
+const Item = List.Item;
+const Brief = Item.Brief;
 
-class canteenPicture extends React.Component {
+class healthFoodDetail extends React.Component {
     constructor(props) {
         super(props);
         
@@ -20,13 +23,13 @@ class canteenPicture extends React.Component {
 
     render() {
         return (
-          <div>
+          <div className="healthFood">
             <NavBar
               mode="light"
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >食堂画面</NavBar>
+            >详情页</NavBar>
             <div className='zui-content index zui-scroll-wrapper'>
               <div className="zui-scroll">
               </div>   
@@ -36,8 +39,8 @@ class canteenPicture extends React.Component {
     }
 }
 
-canteenPicture.contextTypes = {  
+healthFoodDetail.contextTypes = {  
     router: React.PropTypes.object  
 } 
 
-export default  canteenPicture;
+export default  healthFoodDetail;

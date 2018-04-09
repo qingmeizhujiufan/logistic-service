@@ -55,7 +55,6 @@ class Index extends React.Component {
     }
 
     componentWillMount() {
-      document.title = '宿舍公寓';
     }
   
     componentDidMount() {

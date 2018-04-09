@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavBar, Icon, List, Radio, InputItem, TextareaItem, Toast, Button, WhiteSpace, WingBlank } from 'antd-mobile';
-import '../holidays.less';
+import { NavBar, Icon, Card, WingBlank, WhiteSpace } from 'antd-mobile';
+import '../index.less';
 
-class Holidays extends React.Component {
+class Lost extends React.Component {
     constructor(props) {
         super(props);
         
@@ -16,10 +16,9 @@ class Holidays extends React.Component {
     //返回
     callback = () => {
       this.context.router.goBack();
-    }
+    } 
 
     render() {
-
         return (
           <div>
             <NavBar
@@ -27,10 +26,9 @@ class Holidays extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >节日活动</NavBar>
+            >失物招领</NavBar>
             <div className='zui-content index zui-scroll-wrapper'>
               <div className="zui-scroll">
-                  
               </div>   
             </div>
           </div>
@@ -38,8 +36,8 @@ class Holidays extends React.Component {
     }
 }
 
-Holidays.contextTypes = {  
-    router:React.PropTypes.object  
+Lost.contextTypes = {  
+    router: React.PropTypes.object  
 } 
 
-export default  Holidays;
+export default  Lost;

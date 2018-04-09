@@ -38,7 +38,7 @@ class Index extends React.Component {
     }
 
     componentWillMount() {
-      document.title = '出行指南';
+      
     }
   
     componentDidMount() {

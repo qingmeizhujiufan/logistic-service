@@ -1,8 +1,8 @@
 import React from 'react';
-import { NavBar, Icon, Card, WingBlank, WhiteSpace } from 'antd-mobile';
-import '../todayMenu.less';
+import { NavBar, Icon, List, Radio, InputItem, TextareaItem, Toast, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import '../index.less';
 
-class todayMenu extends React.Component {
+class BusinessCulture extends React.Component {
     constructor(props) {
         super(props);
         
@@ -11,15 +11,15 @@ class todayMenu extends React.Component {
     }
   
     componentDidMount() {
-      console.log('props === ', this.props);
     }
 
     //返回
     callback = () => {
       this.context.router.goBack();
-    } 
+    }
 
     render() {
+
         return (
           <div>
             <NavBar
@@ -27,9 +27,10 @@ class todayMenu extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >今日菜单</NavBar>
+            >企业文化</NavBar>
             <div className='zui-content index zui-scroll-wrapper'>
               <div className="zui-scroll">
+                  
               </div>   
             </div>
           </div>
@@ -37,8 +38,8 @@ class todayMenu extends React.Component {
     }
 }
 
-todayMenu.contextTypes = {  
-    router: React.PropTypes.object  
+BusinessCulture.contextTypes = {  
+    router:React.PropTypes.object  
 } 
 
-export default  todayMenu;
+export default  BusinessCulture;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavBar, Icon, Carousel, WhiteSpace, WingBlank } from 'antd-mobile';
-import '../enterpriseAlbum.less';
+import '../index.less';
 
 class EnterpriseAlbum extends React.Component {
     constructor(props) {

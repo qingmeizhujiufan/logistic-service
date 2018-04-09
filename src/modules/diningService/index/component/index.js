@@ -10,6 +10,7 @@ import todayMenu from 'Img/today-menu.jpg';
 import canteenPicture from 'Img/canteen-picture.jpg';
 import survey from 'Img/survey.jpg';
 import healthFood from 'Img/health-food.jpg';
+import lost from 'Img/lost.jpg';
 
 class Index extends React.Component {
     constructor(props) {
@@ -36,17 +37,22 @@ class Index extends React.Component {
                 title: '食堂画面',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: canteenPicture,
-                path: '/diningService/todayMenu/'
+                path: '/pub/canteenPicture/'
               }, {
                 title: '满意度调查',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: survey,
-                path: '/diningService/todayMenu/'
+                path: '/pub/survey/'
               }, {
                 title: '健康饮食',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: healthFood,
-                path: '/diningService/todayMenu/'
+                path: '/pub/healthFood/'
+              }, {
+                title: '失物招领',
+                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                preview: lost,
+                path: '/pub/lost/'
               }
             ]
           }
@@ -54,7 +60,6 @@ class Index extends React.Component {
     }
 
     componentWillMount() {
-      document.title = '就餐服务';
     }
   
     componentDidMount() {
