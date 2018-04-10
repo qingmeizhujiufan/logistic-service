@@ -11,7 +11,7 @@ import App from '../modules/App';
 import Home from '../modules/home/component/home';
 
 /* 就餐服务 */
-import TodayMenu from '../modules/diningService/todayMenu/component/todayMenu';
+import TodayMenu from '../modules/diningService/todayMenu/component';
 
 /* 宿舍公寓 */ 
 
@@ -20,6 +20,8 @@ import TodayMenu from '../modules/diningService/todayMenu/component/todayMenu';
 /* 公共页面 */
 //满意度调查
 import Survey from '../modules/pub/survey/component';
+//
+import CompanyWebsite from '../modules/pub/companyWebsite/component';
 //企业文化
 import BusinessCulture from '../modules/pub/businessCulture/component';
 //节日活动
@@ -39,6 +41,7 @@ module.exports = (
         <IndexRoute component={Home}/>
         <route path="diningService/todayMenu/:floor" component={TodayMenu} />
         <route path="pub/survey/:id" component={Survey} />
+        <route path="pub/companyWebsite/:id" component={CompanyWebsite} />
         <route path="pub/businessCulture/:id" component={BusinessCulture} />
         <route path="pub/holidays/:id" component={Holidays} />
         <route path="pub/enterpriseAlbum/:id" component={EnterpriseAlbum} />

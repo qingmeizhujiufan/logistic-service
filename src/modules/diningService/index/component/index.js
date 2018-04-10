@@ -19,6 +19,7 @@ class Index extends React.Component {
         this.state = {
           data: {
             title: '就餐服务',
+            website: '/pub/companyWebsite/',
             tabIndex: 1,
             tabs: [
               {

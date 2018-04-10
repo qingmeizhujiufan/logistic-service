@@ -4,6 +4,7 @@
 @dark_gray: #545454;
 
 * {
+    box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     outline: none;
 }
@@ -11,6 +12,14 @@
 *:not(input,textarea) { 
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 
+}
+
+.am-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
 }
 
 .am-tab-bar-item {
@@ -235,3 +244,25 @@ body {
 
 
 /*四个方向的细线  end*/
+
+.tab-button-group {
+    padding: 45px 0 0 0;
+
+    .tab-button {
+        display: inline-block;
+        width: 84px;
+        margin-right: 20px;
+        padding: 7px 0;
+        font-size: 12px;
+        color: #888888;
+        letter-spacing: 0.86px;
+        background: #E9E9E9;
+        border-radius: 100px;
+        text-align: center;
+
+        &.active {
+            color: #fff;
+            background-image: linear-gradient(-90deg, #6862FF 0%, #A5AEFF 100%);
+        }
+    }
+}
