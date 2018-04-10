@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router';
 import PropTypes from 'prop-types';
 import { Flex } from 'antd-mobile';
 import QueueAnim from 'rc-queue-anim';
@@ -65,14 +64,12 @@ class CardList extends React.Component {
               {
                 data.tabContent.map((item, index) => {
                   return (
-                    <li key={index}>
-                      <Link to={item.path + tabIndex}>
-                        <div className="wrap-img">
-                          <img src={item.preview} />
-                        </div>
-                        <div className="title">{item.title}</div>
-                        <div className="desc">{item.desc}</div>
-                      </Link>
+                    <li key={index} onClick={() => this.btnClick(item.path + tabIndex)}>
+                      <div className="wrap-img">
+                        <img src={item.preview} />
+                      </div>
+                      <div className="title">{item.title}</div>
+                      <div className="desc">{item.desc}</div>
                     </li>
                   )
                 })

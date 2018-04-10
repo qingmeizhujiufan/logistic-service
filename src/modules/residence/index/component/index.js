@@ -20,11 +20,11 @@ class Index extends React.Component {
             tabIndex: 1,
             tabs: [
               {
-                label: '一栋',
+                label: '学生公寓1号',
               }, {
-                label: '二栋',
+                label: '学生公寓2号',
               }, {
-                label: '三栋',
+                label: '教师公寓',
               }
             ],
             tabContent: [
@@ -68,7 +68,7 @@ class Index extends React.Component {
       let { data } = this.state;
 
       return (
-        <div className="diningService">
+        <div className="residence">
           <div className='zui-scroll-wrapper'>
             <div className="zui-scroll">
               <MenuList data={data} />

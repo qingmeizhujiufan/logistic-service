@@ -1,10 +1,63 @@
 .todayMenu {
 
-	.zui-scroll-wrapper {
-		background-color: #fff;
+	.zui-scroll {
+	    padding: 0 15px;
 	}
 
-	.zui-scroll {
-	    padding: 0 25px;
+	.tab-button-group {
+		padding: 30px 0;
+	}
+
+	.dish-list {
+		margin-top: 0;
+		
+		li {
+			float: left;
+			width: 50%;
+			margin-bottom: 15px;
+
+			&:nth-child(even) {
+				padding-left: 5px;
+
+				&>div {
+					padding-bottom: 10px;
+					background-color: #fff;
+				}
+			}
+
+			&:nth-child(odd) {
+				padding-right: 5px;
+
+				&>div {
+					padding-bottom: 10px;
+					background-color: #fff;
+				}
+			}
+
+			.wrap-img {
+				width: 100%;
+				height: calc(~'30vw - 12px');
+
+				img {
+					width: 100%;
+					height: 100%;
+					border-radius: 7px 7px 0 0;
+				}
+			}
+
+			.title {
+				margin: 10px 5px;
+				font-size: 14px;
+				color: #170202;
+			}
+
+			.desc {
+				margin-left: 5px;
+				font-size: 12px;
+				color: #888888;
+				line-height: 20px;
+			}
+
+		}	
 	}
 }

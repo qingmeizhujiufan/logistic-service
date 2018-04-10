@@ -52,7 +52,7 @@ class Index extends React.Component {
       let { data } = this.state;
 
       return (
-        <div className="diningService">
+        <div className="travelGuide">
           <div className='zui-scroll-wrapper'>
             <div className="zui-scroll">
               <MenuList data={data} />

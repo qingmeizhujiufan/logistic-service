@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Icon, Card, WingBlank, WhiteSpace } from 'antd-mobile';
+import { NavBar, Icon, Card, WingBlank, WhiteSpace, Flex } from 'antd-mobile';
 import QueueAnim from 'rc-queue-anim';
 import '../index.less';
 
@@ -12,6 +12,8 @@ const tabs = [
     label: '晚餐',
   }
 ];
+
+import todayMenu from 'Img/today-menu.jpg';
 
 class TodayMenu extends React.Component {
     constructor(props) {
@@ -62,6 +64,37 @@ class TodayMenu extends React.Component {
                       })
                     }
                   </QueueAnim>
+                </div>
+                <div>
+                  <ul className="zui-list-unstyled dish-list">
+                    <li>
+                      <div>
+                        <div className='wrap-img'>
+                          <img src={todayMenu} />
+                        </div>
+                        <div className="title">鱼香肉丝</div>
+                        <div className="desc">精选猪后腿肉与冬笋翻炒…</div>
+                      </div>
+                    </li>
+                    <li>
+                      <div>
+                        <div className='wrap-img'>
+                          <img src={todayMenu} />
+                        </div>
+                        <div className="title">鱼香肉丝</div>
+                        <div className="desc">精选猪后腿肉与冬笋翻炒…</div>
+                      </div>
+                    </li>
+                    <li>
+                     <div>
+                        <div className='wrap-img'>
+                          <img src={todayMenu} />
+                        </div>
+                        <div className="title">鱼香肉丝</div>
+                        <div className="desc">精选猪后腿肉与冬笋翻炒…</div>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>   
             </div>
