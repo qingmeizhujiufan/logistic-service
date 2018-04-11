@@ -4,7 +4,7 @@ import '../index.less';
 //引入自定义组件
 import MenuList from '../../../../containers/menuList';
 //引入图片
-// import entertainmentNavigation from 'Img/entertainment-navigation.jpg';
+import segmentedNavigation from 'Img/segmented-navigation.jpg';
 import busInformation from 'Img/bus-information.jpg';
 import entertainmentNavigation from 'Img/entertainment-navigation.jpg';
 
@@ -19,18 +19,18 @@ class Index extends React.Component {
               {
                 title: '到段导航',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: busInformation,
-                path: '/diningService/todayMenu/'
+                preview: segmentedNavigation,
+                path: '/travelGuide/segmentedNavigation/'
               }, {
                 title: '班车信息',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: busInformation,
-                path: '/diningService/todayMenu/'
+                path: '/travelGuide/busInformation'
               }, {
                 title: '娱乐点导航',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: entertainmentNavigation,
-                path: '/diningService/todayMenu/'
+                path: '/travelGuide/entertainmentNavigation'
               }
             ]
           }

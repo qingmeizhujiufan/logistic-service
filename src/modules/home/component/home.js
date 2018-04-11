@@ -9,13 +9,13 @@ import index_2_active from 'Img/index_2_active.png';
 import index_3_active from 'Img/index_3_active.png';
 
 /* 就餐服务 */ 
-import DiningService from '../../diningService/index/component';
+import DiningService from '../../diningService/index/component/';
 
 /* 宿舍公寓 */ 
-import Residence from '../../residence/index/component';
+import Residence from '../../residence/index/component/';
 
 /* 出行指南 */ 
-import TravelGuide from '../../travelGuide/index/component';
+import TravelGuide from '../../travelGuide/index/component/';
 
 export default class Home extends React.Component {
     constructor(props) {

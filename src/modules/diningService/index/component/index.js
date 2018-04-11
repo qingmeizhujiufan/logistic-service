@@ -36,22 +36,22 @@ class Index extends React.Component {
                 path: '/diningService/todayMenu/'
               }, {
                 title: '食堂画面',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                desc: '整洁的环境，带给你完美的用餐体验',
                 preview: canteenPicture,
                 path: '/pub/canteenPicture/'
               }, {
                 title: '满意度调查',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                desc: '您的满意就是我们工作的动力',
                 preview: survey,
                 path: '/pub/survey/'
               }, {
                 title: '健康饮食',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                desc: '给您最营养的饮食，最健康的身体',
                 preview: healthFood,
                 path: '/pub/healthFood/'
               }, {
                 title: '失物招领',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                desc: '去看看是否有您需要招领的失物',
                 preview: lost,
                 path: '/pub/lost/'
               }

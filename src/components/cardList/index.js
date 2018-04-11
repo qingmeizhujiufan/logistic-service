@@ -64,7 +64,7 @@ class CardList extends React.Component {
               {
                 data.tabContent.map((item, index) => {
                   return (
-                    <li key={index} onClick={() => this.btnClick(item.path + tabIndex)}>
+                    <li key={index} onClick={() => this.btnClick(item.path + (tabIndex ? tabIndex : ''))}>
                       <div className="wrap-img">
                         <img src={item.preview} />
                       </div>
