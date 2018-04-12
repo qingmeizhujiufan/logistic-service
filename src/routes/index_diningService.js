@@ -5,5 +5,5 @@ import { Route } from 'react-router';
 import TodayMenu from '../modules/diningService/todayMenu/component';
 
 module.exports = ([
-	<route path="diningService/todayMenu/:floor" component={TodayMenu} />
+	<route path="diningService/todayMenu/:floor" key='1_1' component={TodayMenu} />
 ]);

@@ -1,8 +1,20 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
-export default class App extends React.Component {
+//将状态写入属性
+function mapStateToProps(state) {
+    return {
+        isShow: state.isShow
+    }
+};
+
+class App extends React.Component {
     constructor(props){
         super(props);
+
+        this.state = {
+            isShow: this.props.isShow || false
+        };
     }
 
     render() {
@@ -13,3 +25,5 @@ export default class App extends React.Component {
         );
     }
 }
+
+module.exports = connect()(App);

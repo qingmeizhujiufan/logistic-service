@@ -23,11 +23,13 @@ import TravelGuide from './index_travelGuide';
 import Pub from './index_pub';
 
 const groupRouters = [
-    <IndexRoute component={Home}/>,
+    <IndexRoute key='0' component={Home}/>,
     ...DiningService,
     ...TravelGuide,
     ...Pub
 ];
+
+console.log('groupRouters ==== ', groupRouters);
 
 module.exports = (
     <Route path="/" component={App}>

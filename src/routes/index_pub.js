@@ -21,13 +21,13 @@ import HealthFood from '../modules/pub/healthFood/component/';
 import HealthFoodDetail from '../modules/pub/healthFood/component/healthFoodDetail';
 
 module.exports = ([
-	<route path="pub/survey/:id" component={Survey} />,
-    <route path="pub/companyWebsite/:id" component={CompanyWebsite} />,
-    <route path="pub/businessCulture/:id" component={BusinessCulture} />,
-    <route path="pub/holidays/:id" component={Holidays} />,
-    <route path="pub/enterpriseAlbum/:id" component={EnterpriseAlbum} />,
-    <route path="pub/canteenPicture/:id" component={CanteenPicture} />,
-    <route path="pub/lost/:id" component={Lost} />,
-    <route path="pub/healthFood/:id" component={HealthFood} />,
-    <route path="pub/healthFood/detail/:id/:subId" component={HealthFoodDetail} />
+	<route path="pub/survey/:id" key='3_1' component={Survey} />,
+    <route path="pub/companyWebsite/:id" key='3_2' component={CompanyWebsite} />,
+    <route path="pub/businessCulture/:id" key='3_3' component={BusinessCulture} />,
+    <route path="pub/holidays/:id" key='3_4' component={Holidays} />,
+    <route path="pub/enterpriseAlbum/:id" key='3_5' component={EnterpriseAlbum} />,
+    <route path="pub/canteenPicture/:id" key='3_6' component={CanteenPicture} />,
+    <route path="pub/lost/:id" key='3_7' component={Lost} />,
+    <route path="pub/healthFood/:id" key='3_8' component={HealthFood} />,
+    <route path="pub/healthFood/detail/:id/:subId" key='3_9' component={HealthFoodDetail} />
 ]);

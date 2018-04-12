@@ -7,7 +7,7 @@ import BusInformation from '../modules/travelGuide/busInformation/component/';
 import EntertainmentNavigation from '../modules/travelGuide/entertainmentNavigation/component';
 
 module.exports = ([
-	<route path="travelGuide/segmentedNavigation" component={SegmentedNavigation} />,
-    <route path="travelGuide/busInformation" component={BusInformation} />,
-    <route path="travelGuide/entertainmentNavigation" component={EntertainmentNavigation} />
+	<route path="travelGuide/segmentedNavigation" key='2_1' component={SegmentedNavigation} />,
+    <route path="travelGuide/busInformation" key='2_2' component={BusInformation} />,
+    <route path="travelGuide/entertainmentNavigation" key='2_3' component={EntertainmentNavigation} />
 ]);
