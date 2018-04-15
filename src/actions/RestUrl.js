@@ -1,4 +1,4 @@
-const ADDR = 'http://www.xuecheh.com/';
+const ADDR = 'http://localhost:11176/api/';
 
 module.exports = {
     ADDR: ADDR,
