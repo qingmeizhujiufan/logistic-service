@@ -28,13 +28,15 @@ class Lost extends React.Component {
       Toast.loading('正在加载...', 0);
       ajax.getJSON(getCompanyLostInfoUrl, param, (data) => {
         data =  data.backData;
-        data.lost_content = JSON.parse(data.lost_content);
-        data.contentHtml = draftToHtml(data.lost_content);
-        console.log('contentHtml === ', data.contentHtml);
-        this.setState({
-          data,
-          loading: false
-        });
+        if(data.lost_content && data.lost_content !== ''){
+          data.lost_content = JSON.parse(data.lost_content);
+          data.contentHtml = draftToHtml(data.lost_content);
+          console.log('contentHtml === ', data.contentHtml);
+          this.setState({
+            data,
+            loading: false
+          });
+        }
         Toast.hide();
       });
     }
