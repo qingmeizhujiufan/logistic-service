@@ -1,7 +1,11 @@
 import React from 'react';
 import { NavBar, Icon, Card, WingBlank, WhiteSpace, Flex } from 'antd-mobile';
 import QueueAnim from 'rc-queue-anim';
+import ajax from 'Utils/ajax';
+import restUrl from 'RestUrl';
 import '../index.less';
+
+const getDailyDishUrl = restUrl.ADDR + 'server/getDailyDish';
 
 const tabs = [
   {
@@ -21,11 +25,31 @@ class TodayMenu extends React.Component {
         
         this.state = {
           tabIndex: 1,
+          data: []
         };
     }
   
     componentDidMount() {
-      console.log('props === ', this.props);
+      this.getDailyDish();
+    }
+
+    getDailyDish = () => {
+      var param = {};
+      param.id = this.props.params.id;
+      ajax.getJSON(getDailyDishUrl, param, (data) => {
+        data = data.backData;
+        this.setState({
+          data
+        });
+      });
+    }
+
+    filterData = (data) => {
+      const {tabIndex} = this.state;
+      const dataSource = data;
+      return dataSource.filter((item) => {
+        return item.dish_type === tabs[tabIndex - 1].label
+      })
     }
 
     //返回
@@ -41,8 +65,8 @@ class TodayMenu extends React.Component {
     }
 
     render() {
-        const { tabIndex } = this.state;
-
+        const { tabIndex, data } = this.state;
+        const dataSource = this.filterData(data);
         return (
           <div className="todayMenu">
             <NavBar
@@ -67,33 +91,21 @@ class TodayMenu extends React.Component {
                 </div>
                 <div>
                   <ul className="zui-list-unstyled dish-list">
-                    <li>
-                      <div>
-                        <div className='wrap-img'>
-                          <img src={todayMenu} />
-                        </div>
-                        <div className="title">鱼香肉丝</div>
-                        <div className="desc">精选猪后腿肉与冬笋翻炒…</div>
-                      </div>
-                    </li>
-                    <li>
-                      <div>
-                        <div className='wrap-img'>
-                          <img src={todayMenu} />
-                        </div>
-                        <div className="title">鱼香肉丝</div>
-                        <div className="desc">精选猪后腿肉与冬笋翻炒…</div>
-                      </div>
-                    </li>
-                    <li>
-                     <div>
-                        <div className='wrap-img'>
-                          <img src={todayMenu} />
-                        </div>
-                        <div className="title">鱼香肉丝</div>
-                        <div className="desc">精选猪后腿肉与冬笋翻炒…</div>
-                      </div>
-                    </li>
+                    {
+                      dataSource.map((item, index) => {
+                        return (
+                          <li key={index}>
+                            <div>
+                              <div className='wrap-img'>
+                                <img src={restUrl.BASE_HOST + 'UpLoadFile/' + item.dish_img + '.png'} />
+                              </div>
+                              <div className="title">{item.dish_title}</div>
+                              <div className="desc">{item.dish_content}</div>
+                            </div>
+                          </li>
+                        )
+                      })
+                    }
                   </ul>
                 </div>
               </div>   

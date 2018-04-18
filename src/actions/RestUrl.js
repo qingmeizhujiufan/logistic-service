@@ -1,6 +1,7 @@
-const ADDR = 'http://localhost:11176/api/';
+const ADDR = 'http://www.xuecheh.com:8686/';
 
 module.exports = {
-    ADDR: ADDR,
+	BASE_HOST: ADDR,
+    ADDR: ADDR + 'api/',
     UPLOAD: ADDR + 'AdminManage/UpLoadImage',
 };
