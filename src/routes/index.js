@@ -14,7 +14,7 @@ import Home from '../modules/home/component/home';
 import DiningService from './index_diningService';
 
 /* 宿舍公寓 */ 
-
+import Residence from './index_residence';
 
 /* 出行指南 */ 
 import TravelGuide from './index_travelGuide';
@@ -25,6 +25,7 @@ import Pub from './index_pub';
 const groupRouters = [
     <IndexRoute key='0' component={Home}/>,
     ...DiningService,
+    ...Residence,
     ...TravelGuide,
     ...Pub
 ];

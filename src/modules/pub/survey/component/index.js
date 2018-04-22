@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavBar, Icon, List, Radio, InputItem, TextareaItem, Toast, Button, WhiteSpace, WingBlank } from 'antd-mobile';
+import restUrl from 'RestUrl';
+import ajax from 'Utils/ajax';
 import '../index.less';
 
 const RadioItem = Radio.RadioItem;
@@ -8,15 +10,18 @@ const data = [
       { value: 1, label: '一般' },
       { value: 2, label: '差' },
     ];
+const addSurveyUrl = restUrl.ADDR + 'survey/saveSurvey';
 
 class Survey extends React.Component {
     constructor(props) {
         super(props);
         
         this.state = {
+          loading: false,
           value: 0,
           hasError: false,
           telephone: '',
+          suggestion: ''
         };
     }
   
@@ -51,13 +56,40 @@ class Survey extends React.Component {
       });
     }
 
+    onSugChange = (suggestion) => {
+      this.setState({
+        suggestion,
+      });
+    }
+
     //返回
     callback = () => {
       this.context.router.goBack();
     }
 
+    submitSurvey = () => {
+      const { hasError, value, telephone, suggestion } = this.state;
+      if(hasError){
+        Toast.info('请完善手机信息');
+        return;
+      }
+      let param = {};
+      param.companyId = this.props.params.id;
+      param.satisfaction = data[value].label;
+      param.telephone = telephone;
+      param.suggestion = suggestion;
+      this.setState({
+        loading: true
+      });
+      ajax.postJSON(addSurveyUrl, JSON.stringify(param), data => {
+        this.setState({
+          loading: false
+        });
+      });
+    }
+
     render() {
-        let {value, telephone} = this.state;
+        let {loading, value, telephone} = this.state;
 
         return (
           <div>
@@ -90,13 +122,14 @@ class Survey extends React.Component {
                     <TextareaItem
                       rows={5}
                       count={200}
+                      onChange={this.onSugChange}
                     />
                   </List>
                   <WhiteSpace />
                   <WhiteSpace />
                   <WhiteSpace />
                   <WingBlank>
-                    <Button type="primary">提交</Button>
+                    <Button type="primary" onClick={this.submitSurvey} loading={loading}>提交</Button>
                   </WingBlank>
               </div>   
             </div>

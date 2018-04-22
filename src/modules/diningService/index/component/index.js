@@ -23,8 +23,10 @@ class Index extends React.Component {
             tabIndex: 1,
             tabs: [
               {
+                value: '1',
                 label: '一楼食堂',
               }, {
+                value: '2',
                 label: '二楼食堂',
               }
             ],
