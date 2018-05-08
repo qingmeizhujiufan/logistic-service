@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Icon, Card, WingBlank, WhiteSpace, Flex } from 'antd-mobile';
+import { NavBar, Icon, Card, WingBlank, WhiteSpace, Flex, Toast } from 'antd-mobile';
 import QueueAnim from 'rc-queue-anim';
 import ajax from 'Utils/ajax';
 import restUrl from 'RestUrl';
@@ -41,6 +41,9 @@ class TodayMenu extends React.Component {
         this.setState({
           data
         });
+        if(data.length === 0){
+          Toast.info('管理员暂未设置今天菜单', 1);
+        }
       });
     }
 

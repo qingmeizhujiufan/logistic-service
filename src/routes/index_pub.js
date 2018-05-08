@@ -31,6 +31,6 @@ module.exports = ([
     <route path="pub/canteenPicture/:id" key='3_6' component={CanteenPicture} />,
     <route path="pub/lost/:id" key='3_7' component={Lost} />,
     <route path="pub/healthFood/:id" key='3_8' component={HealthFood} />,
-    <route path="pub/healthFood/detail/:id/:subId" key='3_9' component={HealthFoodDetail} />,
+    <route path="pub/healthFood/detail/:id" key='3_9' component={HealthFoodDetail} />,
     <route path="pub/healthLife/:id" key='3_10' component={HealthLife} />,
 ]);

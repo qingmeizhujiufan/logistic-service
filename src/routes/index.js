@@ -30,8 +30,6 @@ const groupRouters = [
     ...Pub
 ];
 
-console.log('groupRouters ==== ', groupRouters);
-
 module.exports = (
     <Route path="/" component={App}>
         {groupRouters}

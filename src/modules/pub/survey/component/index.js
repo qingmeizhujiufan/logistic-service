@@ -85,6 +85,10 @@ class Survey extends React.Component {
         this.setState({
           loading: false
         });
+        Toast.success('谢谢您的建议', 1.5);
+        setTimeout(() => {
+          this.context.router.goBack();
+        }, 1000);
       });
     }
 

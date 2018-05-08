@@ -9,7 +9,7 @@ import HealthFood from 'Img/health-food.jpg';
 const Item = List.Item;
 const Brief = Item.Brief;
 
-const getNewsDetailInfoUrl = restUrl.ADDR + 'News/getNewsDetail';
+const getHealthDetailUrl = restUrl.ADDR + 'health/getHealthDetail';
 
 class healthFoodDetail extends React.Component {
     constructor(props) {
@@ -27,13 +27,16 @@ class healthFoodDetail extends React.Component {
     //获取产品详情
     getNewsDetailInfo = (id) => {
       let param = {};
-      param.newsId = '35e43256-36c3-4ff9-8e68-c7ddc87f9ba5';//this.props.params.id;
+      param.id = this.props.params.id;
       Toast.loading('正在加载...', 0);
-      ajax.getJSON(getNewsDetailInfoUrl, param, (data) => {
+      ajax.getJSON(getHealthDetailUrl, param, (data) => {
         data =  data.backData;
-        data.news_content = JSON.parse(data.news_content);
-        data.contentHtml = draftToHtml(data.news_content);
-        console.log('contentHtml === ', data.contentHtml);
+        if(data.health_content && data.health_content !== ''){
+          data.health_content = JSON.parse(data.health_content);
+          data.contentHtml = draftToHtml(data.health_content);
+          console.log('contentHtml === ', data.contentHtml);
+        }
+        
         this.setState({
           data,
           loading: false
