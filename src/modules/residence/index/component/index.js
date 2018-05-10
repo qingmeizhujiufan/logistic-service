@@ -53,7 +53,7 @@ class Index extends React.Component {
                 preview: healthLife,
                 path: '/pub/healthLife/'
               }, {
-                title: '失物招领',
+                title: '便民服务',
                 desc: '去看看是否有您需要招领的失物',
                 preview: lost,
                 path: '/pub/lost/'
