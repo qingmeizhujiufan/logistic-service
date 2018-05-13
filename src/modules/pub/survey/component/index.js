@@ -19,9 +19,8 @@ class Survey extends React.Component {
         this.state = {
           loading: false,
           value: 0,
-          hasError: false,
-          telephone: '',
-          suggestion: ''
+          dish: 0,
+          clean: 0
         };
     }
   
@@ -29,36 +28,20 @@ class Survey extends React.Component {
     }
 
     onCheckChange = (value) => {
-      console.log('checkbox');
       this.setState({
         value,
       });
     }
 
-    onErrorClick = () => {
-      if (this.state.hasError) {
-        Toast.info('Please enter 11 digits');
-      }
-    }
-
-    onChange = (telephone) => {
-      if (telephone.replace(/\s/g, '').length < 11) {
-        this.setState({
-          hasError: true,
-        });
-      } else {
-        this.setState({
-          hasError: false,
-        });
-      }
+    onDishChange = (dish) => {
       this.setState({
-        telephone,
+        dish,
       });
     }
 
-    onSugChange = (suggestion) => {
+    onCleanChange = (clean) => {
       this.setState({
-        suggestion,
+        clean,
       });
     }
 
@@ -68,16 +51,13 @@ class Survey extends React.Component {
     }
 
     submitSurvey = () => {
-      const { hasError, value, telephone, suggestion } = this.state;
-      if(hasError){
-        Toast.info('请完善手机信息');
-        return;
-      }
+      const { value, dish, clean } = this.state;
+
       let param = {};
       param.companyId = this.props.params.id;
       param.satisfaction = data[value].label;
-      param.telephone = telephone;
-      param.suggestion = suggestion;
+      param.dish = data[dish].label;
+      param.clean = data[clean].label;
       this.setState({
         loading: true
       });
@@ -93,7 +73,7 @@ class Survey extends React.Component {
     }
 
     render() {
-        let {loading, value, telephone} = this.state;
+        let {loading, value, dish, clean} = this.state;
 
         return (
           <div>
@@ -105,36 +85,44 @@ class Survey extends React.Component {
             >满意度调查</NavBar>
             <div className='zui-content index zui-scroll-wrapper'>
               <div className="zui-scroll">
-                  <List renderHeader={() => '满意度调查'}>
+                  <List renderHeader={() => '服务'}>
                     {data.map(i => (
                       <RadioItem key={i.value} checked={value === i.value} onChange={() => this.onCheckChange(i.value)}>
                         {i.label}
                       </RadioItem>
                     ))}
                   </List>
-                  <List renderHeader={() => '填写您的电话信息'}>
-                    <InputItem
-                      type="phone"
-                      placeholder="输入您的电话号码..."
-                      error={this.state.hasError}
-                      onErrorClick={this.onErrorClick}
-                      onChange={this.onChange}
-                      value={telephone}
-                    >手机号码</InputItem>
+                  {
+                    this.props.params.id === '1' || this.props.params.id === '2' ? (
+                      <List renderHeader={() => '菜品'}>
+                        {data.map(i => (
+                          <RadioItem key={i.value} checked={dish === i.value} onChange={() => this.onDishChange(i.value)}>
+                            {i.label}
+                          </RadioItem>
+                        ))}
+                      </List>
+                    ) : null
+                  }              
+                  <List renderHeader={() => '卫生'}>
+                    {data.map(i => (
+                      <RadioItem key={i.value} checked={clean === i.value} onChange={() => this.onCleanChange(i.value)}>
+                        {i.label}
+                      </RadioItem>
+                    ))}
                   </List>
-                  <List renderHeader={() => '填写您的宝贵意见'}>
-                    <TextareaItem
-                      rows={5}
-                      count={200}
-                      onChange={this.onSugChange}
-                    />
-                  </List>
+                  
                   <WhiteSpace />
                   <WhiteSpace />
                   <WhiteSpace />
                   <WingBlank>
                     <Button type="primary" onClick={this.submitSurvey} loading={loading}>提交</Button>
                   </WingBlank>
+                  <WhiteSpace />
+                  <WhiteSpace />
+                  <WhiteSpace />
+                  <WhiteSpace />
+                  <WhiteSpace />
+                  <WhiteSpace />
               </div>   
             </div>
           </div>

@@ -11,6 +11,7 @@ import canteenPicture from 'Img/canteen-picture.jpg';
 import survey from 'Img/survey.jpg';
 import healthFood from 'Img/health-food.jpg';
 import lost from 'Img/lost.jpg';
+import need from 'Img/need.jpg';
 
 class Index extends React.Component {
     constructor(props) {
@@ -56,6 +57,11 @@ class Index extends React.Component {
                 desc: '去看看是否有您需要招领的失物',
                 preview: lost,
                 path: '/pub/lost/'
+              }, {
+                title: '提出你的需求',
+                desc: '为了给您更好的服务',
+                preview: need,
+                path: '/pub/need/'
               }
             ]
           }

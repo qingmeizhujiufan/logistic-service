@@ -10,12 +10,16 @@ import CompanyWebsite from '../modules/pub/companyWebsite/component/';
 import BusinessCulture from '../modules/pub/businessCulture/component/';
 //节日活动
 import Holidays from '../modules/pub/holidays/component/';
+//企业服务和节日详情
+import ServiceDetail from '../modules/pub/companyWebsite/component/serviceDetail';
 //企业相册
 import EnterpriseAlbum from '../modules/pub/enterpriseAlbum/component/';
 //食堂画面
 import CanteenPicture from '../modules/pub/canteenPicture/component/';
 //失物招领
 import Lost from '../modules/pub/lost/component/';
+//提出你的需求
+import Need from '../modules/pub/need/component/';
 //健康饮食
 import HealthFood from '../modules/pub/healthFood/component/';
 import HealthFoodDetail from '../modules/pub/healthFood/component/healthFoodDetail';
@@ -33,4 +37,6 @@ module.exports = ([
     <route path="pub/healthFood/:id" key='3_8' component={HealthFood} />,
     <route path="pub/healthFood/detail/:id" key='3_9' component={HealthFoodDetail} />,
     <route path="pub/healthLife/:id" key='3_10' component={HealthLife} />,
+    <route path="pub/serviceDetail/:id" key='3_11' component={ServiceDetail} />,
+    <route path="pub/need/:id" key='3_1' component={Need} />,
 ]);

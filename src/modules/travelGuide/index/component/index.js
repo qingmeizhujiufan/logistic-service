@@ -27,7 +27,12 @@ class Index extends React.Component {
                 preview: busInformation,
                 path: '/travelGuide/busInformation'
               }, {
-                title: '娱乐点导航',
+                title: '生活导航',
+                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                preview: entertainmentNavigation,
+                path: '/travelGuide/entertainmentNavigation'
+              }, {
+                title: '训练段动态',
                 desc: '丰盛的饭菜，绝对吊足你的胃口',
                 preview: entertainmentNavigation,
                 path: '/travelGuide/entertainmentNavigation'

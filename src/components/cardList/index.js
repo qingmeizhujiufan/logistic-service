@@ -57,7 +57,11 @@ class CardList extends React.Component {
           {this.showTab()}
           <Flex justify="between" style={{marginTop: 20}}>
             <h1 style={{fontSize: 20}}>{data.title}</h1>
-            <span style={{fontSize: 14, color: '#888'}} onClick={() => this.btnClick(data.website + tabIndex)}>企业官网 →</span>
+            {
+              data.website ? (
+                <span style={{fontSize: 14, color: '#888'}} onClick={() => this.btnClick(data.website + data.tabs[tabIndex - 1].value)}>企业官网 →</span> 
+              ) : null
+            }
           </Flex>
           <ul className="zui-list-unstyled card-list">
             <QueueAnim delay={500} type={'bottom'}>
