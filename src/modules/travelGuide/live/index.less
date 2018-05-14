@@ -1,0 +1,62 @@
+.liveList {
+	.am-list-item{
+		padding: 10px 0 10px 15px;
+
+		img {
+			width: 24vw;
+			height: 20vw;
+			border-radius: 3px;
+		}
+
+		&:after {
+			content: '';
+		    position: absolute;
+		    background-color: #ddd;
+		    display: block;
+		    z-index: 1;
+		    top: auto;
+		    right: auto;
+		    bottom: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 1PX;
+		    transform-origin: 50% 100%;
+		    transform: scaleY(0.5);
+		}
+
+		.am-list-line {
+			&:after {
+				height: 0 !important;
+			}
+
+			.am-list-brief {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.healthFoodDetail {
+	&.zui-scroll-wrapper {
+	    background-color: #fff;
+	}
+
+	.wrap-html {
+		padding: 15px;
+    	overflow-x: hidden;
+    	overflow-y: scroll;
+    	background-color: #fff;
+
+		p {
+			margin: 0;
+			line-height: 2;
+		}
+
+		img {
+			width: 100% !important;
+			height: auto !important;
+			max-width: 100%;
+			margin: 5px 0;
+		}
+	}
+}

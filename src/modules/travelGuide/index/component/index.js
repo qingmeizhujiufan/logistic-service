@@ -7,6 +7,7 @@ import MenuList from '../../../../containers/menuList';
 import segmentedNavigation from 'Img/segmented-navigation.jpg';
 import busInformation from 'Img/bus-information.jpg';
 import entertainmentNavigation from 'Img/entertainment-navigation.jpg';
+import live from 'Img/live.jpg';
 
 class Index extends React.Component {
     constructor(props) {
@@ -33,9 +34,9 @@ class Index extends React.Component {
                 path: '/travelGuide/entertainmentNavigation'
               }, {
                 title: '训练段动态',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
-                preview: entertainmentNavigation,
-                path: '/travelGuide/entertainmentNavigation'
+                desc: '训练段动态了解一下',
+                preview: live,
+                path: '/live/liveList'
               }
             ]
           }
