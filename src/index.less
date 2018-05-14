@@ -1,5 +1,5 @@
-// 主题绿
-@theme_color: #3ac17e;
+// 主题紫
+@theme_color: #6862ff;
 // 深度灰
 @dark_gray: #545454;
 
@@ -22,6 +22,7 @@
     z-index: 20;
 
     &.am-navbar-light {
+        color: @theme_color !important;
 
         &:after {
             content: '';
@@ -39,6 +40,14 @@
 
 .am-tab-bar-item {
     position: relative;
+}
+
+.am-radio.am-radio-checked .am-radio-inner:after {
+    border-color: @theme_color !important;
+}
+
+.am-button-primary {
+    background-color: @theme_color !important;
 }
 
 body {
@@ -279,5 +288,14 @@ body {
             color: #fff;
             background-image: linear-gradient(-90deg, #6862FF 0%, #A5AEFF 100%);
         }
+    }
+}
+
+.wrap-no-data {
+    width: 40vw;
+    margin: 20vw auto 0;
+
+    img {
+        width: 100%;
     }
 }

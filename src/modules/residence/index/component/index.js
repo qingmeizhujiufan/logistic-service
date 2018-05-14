@@ -43,7 +43,7 @@ class Index extends React.Component {
                 title: '大堂画面',
                 desc: '随时随地查看大堂画面',
                 preview: mall,
-                path: '/diningService/todayMenu/'
+                path: '/pub/canteenPicture/'
               }, {
                 title: '满意度调查',
                 desc: '您的满意就是我们工作的动力',

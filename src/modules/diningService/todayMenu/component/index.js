@@ -4,6 +4,7 @@ import QueueAnim from 'rc-queue-anim';
 import ajax from 'Utils/ajax';
 import restUrl from 'RestUrl';
 import '../index.less';
+import noData from 'Img/no-data.png';
 
 const getDailyDishUrl = restUrl.ADDR + 'server/getDailyDish';
 
@@ -95,7 +96,7 @@ class TodayMenu extends React.Component {
                 <div>
                   <ul className="zui-list-unstyled dish-list">
                     {
-                      dataSource.map((item, index) => {
+                      dataSource.length > 0 ? dataSource.map((item, index) => {
                         return (
                           <li key={index}>
                             <div>
@@ -107,7 +108,11 @@ class TodayMenu extends React.Component {
                             </div>
                           </li>
                         )
-                      })
+                      }) : (
+                        <div className="wrap-no-data">
+                          <img src={noData} />
+                        </div>
+                      )
                     }
                   </ul>
                 </div>

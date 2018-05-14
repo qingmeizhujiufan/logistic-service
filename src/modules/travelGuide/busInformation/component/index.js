@@ -33,8 +33,10 @@ class BusInformation extends React.Component {
     getBusDetailInfo = (id) => {
       Toast.loading('正在加载...', 0);
       ajax.getJSON(getBusDetailUrl, null, (data) => {
-        data.backData = JSON.parse(data.backData);
-        data.contentHtml = draftToHtml(data.backData);
+        if(data.backData !== ''){
+          data.backData = JSON.parse(data.backData);
+          data.contentHtml = draftToHtml(data.backData);
+        }
         
         this.setState({
           data,

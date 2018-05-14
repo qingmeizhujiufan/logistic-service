@@ -23,6 +23,11 @@ class BusInformation extends React.Component {
       this.context.router.push(url);
     }
 
+    //返回
+    callback = () => {
+      this.context.router.goBack();
+    } 
+
     render() {
       let { data } = this.state;
 

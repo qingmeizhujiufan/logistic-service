@@ -7,7 +7,23 @@ class canteenPicture extends React.Component {
         super(props);
         
         this.state = {
+          title: ''
         };
+    }
+
+    componentWillMount() {
+      let id = this.props.params.id;
+      if(id === '1' || id === '2'){
+        this.setState({
+          title: '食堂画面'
+        });
+        return;
+      }
+      if(id === '3' || id === '4' || id === '5'){
+        this.setState({
+          title: '大堂画面'
+        });
+      }
     }
   
     componentDidMount() {
@@ -19,6 +35,7 @@ class canteenPicture extends React.Component {
     } 
 
     render() {
+      let {title} = this.state;
         return (
           <div>
             <NavBar
@@ -26,7 +43,7 @@ class canteenPicture extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >食堂画面</NavBar>
+            >{title}</NavBar>
             <div className='zui-content index zui-scroll-wrapper'>
               <div className="zui-scroll">
               </div>   

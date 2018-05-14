@@ -19,17 +19,17 @@ class Index extends React.Component {
             tabContent: [
               {
                 title: '到段导航',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                desc: '指引所在地，知你所想',
                 preview: segmentedNavigation,
                 path: '/travelGuide/segmentedNavigation/'
               }, {
                 title: '班车信息',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                desc: '及时有用的班车信息，快来查阅吧',
                 preview: busInformation,
                 path: '/travelGuide/busInformation'
               }, {
                 title: '生活导航',
-                desc: '丰盛的饭菜，绝对吊足你的胃口',
+                desc: '去哪里都不怕，都在这里',
                 preview: entertainmentNavigation,
                 path: '/travelGuide/entertainmentNavigation'
               }, {
