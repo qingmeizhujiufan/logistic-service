@@ -9,6 +9,7 @@ import restUrl from 'RestUrl';
 import '../index.less';
 const Item = List.Item;
 const Brief = Item.Brief;
+import noData from 'Img/no-data.png';
 
 const getBusDetailUrl = restUrl.ADDR + 'company/getBusDetail';
 
@@ -57,7 +58,7 @@ class BusInformation extends React.Component {
 
     render() {
       let { data } = this.state;
-
+      console.log('data == ', data);
       return (
         <div className="busInformation">
           <NavBar
@@ -67,7 +68,15 @@ class BusInformation extends React.Component {
             onLeftClick={this.callback}
           >班车信息</NavBar>
           <div className='zui-content'>
-              <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>   
+            {
+              data.backData !== '' ? (
+                <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>   
+              ) : (
+                <div className="wrap-no-data">
+                  <img src={noData} />
+                </div>
+              )
+            }
             </div>
         </div>
       );

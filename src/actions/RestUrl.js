@@ -1,4 +1,4 @@
-const ADDR = 'http://localhost:11176/';
+const ADDR = 'http://www.xuecheh.com:8686/';
 
 module.exports = {
 	BASE_HOST: ADDR,
