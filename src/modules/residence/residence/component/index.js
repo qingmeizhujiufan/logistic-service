@@ -66,10 +66,8 @@ class Residence extends React.Component {
               leftContent="返回" 
               onLeftClick={this.callback}
             >房屋信息</NavBar>
-          <div className='zui-content zui-scroll-wrapper'>
-            <div className="zui-scroll">
-              <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>     
-            </div>   
+          <div className='zui-content zui-scroll-wrapper article'>
+              <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>  
           </div>
         </div>
       );

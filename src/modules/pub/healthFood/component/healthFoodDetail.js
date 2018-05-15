@@ -34,7 +34,6 @@ class healthFoodDetail extends React.Component {
         if(data.health_content && data.health_content !== ''){
           data.health_content = JSON.parse(data.health_content);
           data.contentHtml = draftToHtml(data.health_content);
-          console.log('contentHtml === ', data.contentHtml);
         }
         
         this.setState({
@@ -59,8 +58,11 @@ class healthFoodDetail extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >详情页</NavBar>
-            <div className='zui-content healthFoodDetail'>
+            ></NavBar>
+            <div className='zui-content healthFoodDetail article'>
+              <h2>{data.health_title}</h2>
+              <p className="create-time">{data.create_time}</p>
+              <div className="desc">{data.health_desc}</div>
               <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>   
             </div>
           </div>

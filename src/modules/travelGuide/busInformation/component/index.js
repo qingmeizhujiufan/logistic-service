@@ -67,7 +67,7 @@ class BusInformation extends React.Component {
             leftContent="返回" 
             onLeftClick={this.callback}
           >班车信息</NavBar>
-          <div className='zui-content'>
+          <div className='zui-content zui-scroll-wrapper article'>
             {
               data.backData !== '' ? (
                 <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>   

@@ -59,8 +59,11 @@ class LiveDetail extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >详情页</NavBar>
-            <div className='zui-content liveDetail'>
+            ></NavBar>
+            <div className='zui-content zui-scroll-wrapper article'>
+              <h2>{data.live_title}</h2>
+              <p className="create-time">{data.create_time}</p>
+              <div className="desc">{data.live_desc}</div>
               <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>   
             </div>
           </div>
