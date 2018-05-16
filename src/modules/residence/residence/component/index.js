@@ -6,6 +6,7 @@ import htmlToDraft from 'html-to-draftjs';
 import ajax from 'Utils/ajax';
 import restUrl from 'RestUrl';
 import '../index.less';
+import noData from 'Img/no-data.png';
 
 const getCompanyResidenceInfoUrl = restUrl.ADDR + 'server/getCompanyResidenceInfo';
 
@@ -67,7 +68,15 @@ class Residence extends React.Component {
               onLeftClick={this.callback}
             >房屋信息</NavBar>
           <div className='zui-content zui-scroll-wrapper article'>
-              <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>  
+            {
+              data.residence_content === '' ? (
+                <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div> 
+              ) : (
+                <div className="wrap-no-data">
+                  <img src={noData} />
+                </div>
+              ) 
+            }
           </div>
         </div>
       );

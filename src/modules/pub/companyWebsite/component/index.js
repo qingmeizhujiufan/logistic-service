@@ -5,7 +5,7 @@ import '../index.less';
 import ajax from 'Utils/ajax';
 import restUrl from 'RestUrl';
 import draftToHtml from 'draftjs-to-html';
-
+import noData from 'Img/no-data.png';
 //获取公司信息
 const getCompanyListUrl = restUrl.ADDR + 'company/GetCompanyList';
 //获取公司服务信息
@@ -109,51 +109,71 @@ class CompanyWebsite extends React.Component {
               leftContent="返回" 
               onLeftClick={this.callback}
             >企业官网</NavBar>
-            <div className='zui-content index zui-scroll-wrapper website'>
-              <div className="zui-scroll">
+            <div className='zui-content index zui-scroll-wrapper article website'>
                 <Tabs tabs={tabs}
                   initialPage={0}
+                  swipeable={false}
                   onChange={(tab, index) => { console.log('onChange', index, tab); }}
                   onTabClick={(tab, index) => { console.log('onTabClick', index, tab); }}
                 >
                   <div>
-                    <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.culture}}></div> 
+                    {
+                        data.culture !== '' ? (
+                            <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.culture}}></div> 
+                        ) : (
+                            <div className="wrap-no-data">
+                              <img src={noData} />
+                            </div>
+                        ) 
+                    }
+                    
                   </div>
                   <div>
                     {
-                        service.map(item => {
+                        service.length > 0 ? service.map(item => {
                             return (
                                 <div key={item.key} className="list" onClick={this.showDetail.bind(null, item.id)}>
                                     {item.service_title}
                                 </div>
                             )
-                        })
+                        }) : (
+                            <div className="wrap-no-data">
+                              <img src={noData} />
+                            </div>
+                        ) 
                     }
                   </div>
                   <div>
                     {
-                        fileList.map((item, index) => {
+                        fileList.length > 0 ?fileList.map((item, index) => {
                             return (
                                 <div key={index} className="wrap-img">
                                     <img src={item.url} />
                                 </div>
                             )
-                        })
+                        }) : (
+                            <div className="wrap-no-data">
+                              <img src={noData} />
+                            </div>
+                        ) 
                     }
                   </div>
                   <div>
                     {
-                        holiday.map(item => {
+                        holiday.length > 0 ?holiday.map(item => {
                             return (
                                 <div key={item.key} className="list" onClick={this.showDetail.bind(null, item.id)}>
                                     {item.service_title}
                                 </div>
                             )
-                        })
+                        }) : (
+                            <div className="wrap-no-data">
+                              <img src={noData} />
+                            </div>
+                        ) 
                     }
                   </div>
-                </Tabs>
-              </div>   
+                </Tabs>  
             </div>
           </div>
         );

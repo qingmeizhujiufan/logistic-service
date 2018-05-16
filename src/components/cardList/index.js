@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Flex } from 'antd-mobile';
 import QueueAnim from 'rc-queue-anim';
 import './index.less';
+import arrow from 'Img/right-arrow.png';
 
 class CardList extends React.Component {
     constructor(props) {
@@ -59,7 +60,7 @@ class CardList extends React.Component {
             <h1 style={{fontSize: 20}}>{data.title}</h1>
             {
               data.website ? (
-                <span style={{fontSize: 14, color: '#888'}} onClick={() => this.btnClick(data.website + data.tabs[tabIndex - 1].value)}>企业官网 →</span> 
+                <span style={{fontSize: 14, color: '#888'}} onClick={() => this.btnClick(data.website + data.tabs[tabIndex - 1].value)}>企业官网<img src={arrow} style={{width: 10, marginLeft: 5}} /></span> 
               ) : null
             }
           </Flex>

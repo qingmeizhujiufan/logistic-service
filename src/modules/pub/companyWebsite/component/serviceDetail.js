@@ -59,11 +59,10 @@ class ServiceDetail extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >{data.service_title}</NavBar>
-            <div className='zui-content index zui-scroll-wrapper website'>
-              <div className="zui-scroll">
-                <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.service_content}}></div> 
-              </div>   
+            ></NavBar>
+            <div className='zui-content index zui-scroll-wrapper article'>
+                <h2>{data.service_title}</h2>
+                <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.service_content}}></div>   
             </div>
           </div>
         );
