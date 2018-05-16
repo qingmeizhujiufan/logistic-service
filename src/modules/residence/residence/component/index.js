@@ -69,7 +69,7 @@ class Residence extends React.Component {
             >房屋信息</NavBar>
           <div className='zui-content zui-scroll-wrapper article'>
             {
-              data.residence_content === '' ? (
+              data.residence_content !== '' ? (
                 <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div> 
               ) : (
                 <div className="wrap-no-data">
