@@ -13,7 +13,7 @@ const getServiceListUrl = restUrl.ADDR + 'company/GetServiceList';
 
 const tabs = [
   { title: '企业文化' },
-  { title: '服务咨询' },
+  { title: '服务资讯' },
   { title: '企业相册' },
   { title: '节日活动' }
 ];

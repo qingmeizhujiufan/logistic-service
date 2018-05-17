@@ -22,6 +22,7 @@ class Index extends React.Component {
             title: '就餐服务',
             website: '/pub/companyWebsite/',
             tabIndex: 1,
+            activeTab: this.props.activeTab,
             tabs: [
               {
                 value: '1',

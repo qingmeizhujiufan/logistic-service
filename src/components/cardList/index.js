@@ -13,6 +13,14 @@ class CardList extends React.Component {
           tabIndex: this.props.data.tabIndex
         };
     }
+
+    componentWillMount() {
+      if(this.props.data.activeTab){ 
+        this.setState({
+          tabIndex: parseInt(this.props.data.activeTab)
+        });
+      }
+    }
   
     componentDidMount() {
     }

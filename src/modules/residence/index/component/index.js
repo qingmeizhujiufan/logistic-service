@@ -20,6 +20,7 @@ class Index extends React.Component {
           data: {
             title: '宿舍公寓',
             tabIndex: 1,
+            activeTab: this.props.activeTab,
             website: '/pub/companyWebsite/',
             tabs: [
               {

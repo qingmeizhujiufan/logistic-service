@@ -22,19 +22,36 @@ export default class Home extends React.Component {
         super(props);
 
         this.state = {
-          selectedTab: '1'
+          selectedTab: '1',
+          params: {}
         };
     }
 
     componentWillMount() {
-      if(sessionStorage.getItem('selectedTab')){
+      const params = this.getRequest();
+      console.log('params === ', params);
+      if(params.id){
         this.setState({
-          selectedTab: sessionStorage.getItem('selectedTab')
+          selectedTab: params.id
         });
-      }else {
-        sessionStorage.setItem('selectedTab', '1');
       }
+      this.setState({
+        params: params
+      });
     }
+
+    getRequest() {   
+       var url = location.href.substring(location.href.indexOf('?')); //获取url中"?"符后的字串   
+       var theRequest = new Object();   
+       if (url.indexOf("?") != -1) {   
+          var str = url.substr(1);   
+          var strs = str.split("&");   
+          for(var i = 0; i < strs.length; i ++) {   
+             theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);   
+          }   
+       }   
+       return theRequest;   
+    } 
 
     render() {
         return (
@@ -71,7 +88,7 @@ export default class Home extends React.Component {
                       sessionStorage.setItem('selectedTab', '1');
                     }}
                   >
-                    <DiningService />
+                    <DiningService activeTab={this.state.params.subid} />
                   </TabBar.Item>
                   <TabBar.Item
                     icon={<img style={{
@@ -98,7 +115,7 @@ export default class Home extends React.Component {
                       sessionStorage.setItem('selectedTab', '2');
                     }}
                   >
-                    <Residence />
+                    <Residence activeTab={this.state.params.subid} />
                   </TabBar.Item>
                   <TabBar.Item
                     icon={<img style={{
