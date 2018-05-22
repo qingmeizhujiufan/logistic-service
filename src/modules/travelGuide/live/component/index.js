@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Icon, Card, WingBlank, WhiteSpace, List } from 'antd-mobile';
+import { NavBar, Icon, Card, WingBlank, WhiteSpace, List, Toast } from 'antd-mobile';
 import ajax from 'Utils/ajax';
 import restUrl from 'RestUrl';
 import '../index.less';
@@ -22,6 +22,7 @@ class LiveList extends React.Component {
     }
 
     getList = () => {
+      Toast.loading('正在加载...', 0);
       ajax.getJSON(getLiveUrl, null, _data => {
         if(_data.success){
           let backData = _data.backData;
@@ -33,12 +34,13 @@ class LiveList extends React.Component {
             data: backData
           });
         }
+        Toast.hide();
       });
     }
 
     //返回
     callback = () => {
-      this.context.router.goBack();
+      this.context.router.push('/?id=3');
     } 
 
     goTo = (path) => {

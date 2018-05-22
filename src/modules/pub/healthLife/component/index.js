@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavBar, Icon, Card, WingBlank, WhiteSpace, List } from 'antd-mobile';
+import { NavBar, Icon, Card, WingBlank, WhiteSpace, List, Toast } from 'antd-mobile';
 import '../index.less';
 import ajax from 'Utils/ajax';
 import restUrl from 'RestUrl';
@@ -22,6 +22,7 @@ class healthLife extends React.Component {
     }
 
     getList = () => {
+      Toast.loading('正在加载...', 0);
       ajax.getJSON(getHealthUrl, null, _data => {
         if(_data.success){
           let backData = _data.backData;
@@ -36,6 +37,7 @@ class healthLife extends React.Component {
             data
           });
         }
+        Toast.hide();
       });
     }
 
@@ -57,7 +59,7 @@ class healthLife extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >健康饮食</NavBar>
+            >健康生活</NavBar>
             <div className='zui-content index zui-scroll-wrapper'>
               <div className="zui-scroll">
                 <List>

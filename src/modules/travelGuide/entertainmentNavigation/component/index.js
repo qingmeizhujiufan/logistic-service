@@ -25,7 +25,7 @@ class BusInformation extends React.Component {
 
     //返回
     callback = () => {
-      this.context.router.goBack();
+      this.context.router.push('/?id=3');
     } 
 
     render() {
@@ -38,19 +38,10 @@ class BusInformation extends React.Component {
             icon={<Icon type="left" />}
             leftContent="返回" 
             onLeftClick={this.callback}
-          >到段导航</NavBar>
+          >生活导航</NavBar>
           <div className="zui-content zui-scroll-wrapper">
             <div className="zui-scroll">
-              <Map 
-                center={{lng: 116.402544, lat: 39.928216}} 
-                zoom="11"
-                style={{width: '100vw', height: 'calc(100vh - 44px)'}}
-              >
-                  <TrafficLayer/>
-                  <Marker position={{lng: 116.402544, lat: 39.928216}} />
-                  <NavigationControl /> 
-                  <InfoWindow position={{lng: 116.402544, lat: 39.928216}} text="内容" title="标题"/>
-              </Map>
+              <p>敬请期待~</p>
             </div>   
           </div>
         </div>

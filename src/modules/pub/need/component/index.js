@@ -113,6 +113,7 @@ class Need extends React.Component {
                       rows={5}
                       count={200}
                       onChange={this.onSugChange}
+                      placeholder='为了节省您的时间，您想吃什么，您想买什么，我们会按时送到您的房间。并请留下您的联系方式，微信，姓名等信息。具体每次收费标准待定。'
                     />
                   </List>
                   <WhiteSpace />

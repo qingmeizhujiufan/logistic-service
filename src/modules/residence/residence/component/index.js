@@ -53,7 +53,7 @@ class Residence extends React.Component {
 
     //返回
     callback = () => {
-      this.context.router.goBack();
+      this.context.router.push('/?id=2');
     } 
 
     render() {
