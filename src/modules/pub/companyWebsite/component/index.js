@@ -11,18 +11,12 @@ const getCompanyListUrl = restUrl.ADDR + 'company/GetCompanyList';
 //获取公司服务信息
 const getServiceListUrl = restUrl.ADDR + 'company/GetServiceList';
 
-let tabs = [
-    {title: '企业文化'},
-    {title: '服务资讯'},
-    {title: '企业相册'},
-    {title: '节日活动'}
-];
-
 class CompanyWebsite extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
+            tabs: [],
             companyId: '',
             data: {},
             service: [],
@@ -33,16 +27,26 @@ class CompanyWebsite extends React.Component {
     }
 
     componentWillMount() {
+        let tabs = [];
         if (this.props.params.id === '1' || this.props.params.id === '2') {
             tabs = [
                 {title: '企业文化'},
                 {title: '企业相册'},
                 {title: '节日活动'}
             ];
-            this.setState({
-                companyId: this.props.params.id
-            });
+        }else {
+            tabs = [
+                {title: '企业文化'},
+                {title: '服务资讯'},
+                {title: '企业相册'},
+                {title: '节日活动'}
+            ];
         }
+
+        this.setState({
+            tabs,
+            companyId: this.props.params.id
+        });
     }
 
     componentDidMount() {
@@ -114,7 +118,7 @@ class CompanyWebsite extends React.Component {
     }
 
     render() {
-        let {data, fileList, service, holiday, companyId} = this.state;
+        let {data, fileList, service, holiday, companyId, tabs} = this.state;
         return (
             <div>
                 <NavBar
@@ -124,23 +128,71 @@ class CompanyWebsite extends React.Component {
                     onLeftClick={this.callback}
                 >企业官网</NavBar>
                 <div className='zui-content index zui-scroll-wrapper article website'>
-                    <Tabs tabs={tabs}
-                          initialPage={0}
-                          swipeable={false}
-                    >
-                        <div>
-                            {
-                                data.culture !== '' ? (
-                                    <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.culture}}></div>
-                                ) : (
-                                    <div className="wrap-no-data">
-                                        <img src={noData}/>
-                                    </div>
-                                )
-                            }
-                        </div>
-                        {
-                            (companyId === '1' || companyId === '2') ? '' : (
+                    {
+                        (companyId === '1' || companyId === '2') ? (
+                            <Tabs tabs={tabs}
+                                  initialPage={0}
+                                  swipeable={false}
+                            >
+                                <div>
+                                    {
+                                        data.culture !== '' ? (
+                                            <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.culture}}></div>
+                                        ) : (
+                                            <div className="wrap-no-data">
+                                                <img src={noData}/>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                                <div>
+                                    {
+                                        fileList.length > 0 ? fileList.map((item, index) => {
+                                            return (
+                                                <div key={index} className="wrap-img">
+                                                    <img src={item.url}/>
+                                                </div>
+                                            )
+                                        }) : (
+                                            <div className="wrap-no-data">
+                                                <img src={noData}/>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                                <div>
+                                    {
+                                        holiday.length > 0 ? holiday.map(item => {
+                                            return (
+                                                <div key={item.key} className="list"
+                                                     onClick={this.showDetail.bind(null, item.id)}>
+                                                    {item.service_title}
+                                                </div>
+                                            )
+                                        }) : (
+                                            <div className="wrap-no-data">
+                                                <img src={noData}/>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                            </Tabs>
+                        ): (
+                            <Tabs tabs={tabs}
+                                  initialPage={0}
+                                  swipeable={false}
+                            >
+                                <div>
+                                    {
+                                        data.culture !== '' ? (
+                                            <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.culture}}></div>
+                                        ) : (
+                                            <div className="wrap-no-data">
+                                                <img src={noData}/>
+                                            </div>
+                                        )
+                                    }
+                                </div>
                                 <div>
                                     {
                                         service.length > 0 ? service.map(item => {
@@ -157,40 +209,40 @@ class CompanyWebsite extends React.Component {
                                         )
                                     }
                                 </div>
-                            )
-                        }
-                        <div>
-                            {
-                                fileList.length > 0 ? fileList.map((item, index) => {
-                                    return (
-                                        <div key={index} className="wrap-img">
-                                            <img src={item.url}/>
-                                        </div>
-                                    )
-                                }) : (
-                                    <div className="wrap-no-data">
-                                        <img src={noData}/>
-                                    </div>
-                                )
-                            }
-                        </div>
-                        <div>
-                            {
-                                holiday.length > 0 ? holiday.map(item => {
-                                    return (
-                                        <div key={item.key} className="list"
-                                             onClick={this.showDetail.bind(null, item.id)}>
-                                            {item.service_title}
-                                        </div>
-                                    )
-                                }) : (
-                                    <div className="wrap-no-data">
-                                        <img src={noData}/>
-                                    </div>
-                                )
-                            }
-                        </div>
-                    </Tabs>
+                                <div>
+                                    {
+                                        fileList.length > 0 ? fileList.map((item, index) => {
+                                            return (
+                                                <div key={index} className="wrap-img">
+                                                    <img src={item.url}/>
+                                                </div>
+                                            )
+                                        }) : (
+                                            <div className="wrap-no-data">
+                                                <img src={noData}/>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                                <div>
+                                    {
+                                        holiday.length > 0 ? holiday.map(item => {
+                                            return (
+                                                <div key={item.key} className="list"
+                                                     onClick={this.showDetail.bind(null, item.id)}>
+                                                    {item.service_title}
+                                                </div>
+                                            )
+                                        }) : (
+                                            <div className="wrap-no-data">
+                                                <img src={noData}/>
+                                            </div>
+                                        )
+                                    }
+                                </div>
+                            </Tabs>
+                        )
+                    }
                 </div>
             </div>
         );
