@@ -55,7 +55,7 @@ class Lost extends React.Component {
               icon={<Icon type="left" />}
               leftContent="返回" 
               onLeftClick={this.callback}
-            >失物招领</NavBar>
+            >便民服务</NavBar>
             <div className='zui-content lost'>
               <div className="wrap-html" dangerouslySetInnerHTML={{__html: data.contentHtml}}></div>     
             </div>

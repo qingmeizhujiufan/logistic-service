@@ -55,12 +55,12 @@ class Index extends React.Component {
                 path: '/pub/healthFood/'
               }, {
                 title: '便民服务',
-                desc: '去看看是否有您需要招领的失物',
+                desc: '为您提供温馨的便民服务',
                 preview: lost,
                 path: '/pub/lost/'
               }, {
                 title: '提出你的需求',
-                desc: '为了给您更好的服务',
+                desc: '有更好的建议想对我们讲请点击进来',
                 preview: need,
                 path: '/pub/need/'
               }

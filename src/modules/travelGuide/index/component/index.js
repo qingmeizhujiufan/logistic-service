@@ -19,7 +19,7 @@ class Index extends React.Component {
             tabContent: [
               {
                 title: '到段导航',
-                desc: '指引所在地，知你所想',
+                desc: '轻松找到去训练段的回家路',
                 preview: segmentedNavigation,
                 path: '/travelGuide/segmentedNavigation/'
               }, {
@@ -29,7 +29,7 @@ class Index extends React.Component {
                 path: '/travelGuide/busInformation'
               }, {
                 title: '生活导航',
-                desc: '去哪里都不怕，都在这里',
+                desc: '武汉这么大，我想去看看',
                 preview: entertainmentNavigation,
                 path: '/travelGuide/entertainmentNavigation'
               }, {

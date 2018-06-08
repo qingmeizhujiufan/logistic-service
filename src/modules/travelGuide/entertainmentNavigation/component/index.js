@@ -39,12 +39,6 @@ const school = [
 
 const tour = [
     {
-        title: '光谷广场',
-        desc: '武汉轨道交通2号线1期东南端的首末站'
-    },{
-        title: '楚河汉街',
-        desc: '湖北省武汉市核心地段，武昌区东湖和沙湖之间'
-    },{
         title: '武汉植物园',
         desc: '中国湖北省武汉市武昌区磨山'
     },{
@@ -63,6 +57,35 @@ const tour = [
         title: '武汉欢乐谷',
         desc: '东湖生态旅游风景区欢乐大道196号（近武汉火车站）'
     },
+];
+
+const shopping = [
+    {
+        title: '光谷广场',
+        desc: '武汉轨道交通2号线1期东南端的首末站'
+    },{
+        title: '楚河汉街',
+        desc: '湖北省武汉市核心地段，武昌区东湖和沙湖之间'
+    },{
+        title: '群光广场',
+        desc: ''
+    },{
+        title: '司门口',
+        desc: ''
+    }
+];
+
+const hostpital = [
+    {
+        title: '光谷同济医院',
+        desc: ''
+    },{
+        title: '武汉大学中南医院',
+        desc: ''
+    },{
+        title: '湖北省中医院',
+        desc: ''
+    }
 ];
 
 class BusInformation extends React.Component {
@@ -140,6 +163,40 @@ class BusInformation extends React.Component {
                 <List renderHeader={() => '旅游景点'}>
                     {
                         tour.map((item, index) => {
+                            return (
+                                <Item
+                                    key={index}
+                                    arrow="horizontal"
+                                    multipleLine
+                                    onClick={() => this.BaiduGuide(getUrl(item.title))}
+                                    platform="android"
+                                >
+                                    {item.title}<Brief>{item.desc}</Brief>
+                                </Item>
+                            )
+                        })
+                    }
+                </List>
+                <List renderHeader={() => '逛街购'}>
+                    {
+                        shopping.map((item, index) => {
+                            return (
+                                <Item
+                                    key={index}
+                                    arrow="horizontal"
+                                    multipleLine
+                                    onClick={() => this.BaiduGuide(getUrl(item.title))}
+                                    platform="android"
+                                >
+                                    {item.title}<Brief>{item.desc}</Brief>
+                                </Item>
+                            )
+                        })
+                    }
+                </List>
+                <List renderHeader={() => '医院'}>
+                    {
+                        hostpital.map((item, index) => {
                             return (
                                 <Item
                                     key={index}
