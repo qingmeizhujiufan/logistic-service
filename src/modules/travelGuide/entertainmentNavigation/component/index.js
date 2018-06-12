@@ -177,7 +177,7 @@ class BusInformation extends React.Component {
                         })
                     }
                 </List>
-                <List renderHeader={() => '逛街购'}>
+                <List renderHeader={() => '逛街购物'}>
                     {
                         shopping.map((item, index) => {
                             return (
