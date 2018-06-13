@@ -98,37 +98,37 @@ class Index extends React.Component {
                                 title: '羽毛球馆',
                                 desc: '打羽毛球从现在开始！',
                                 preview: ball_1,
-                                path: '/residence/residence/'
+                                path: '/residence/ball/'
                             }, {
                                 title: '足球场',
                                 desc: '跟我一起踢足球，尽情奔跑吧！',
                                 preview: ball_2,
-                                path: '/pub/canteenPicture/'
+                                path: '/residence/ball/'
                             }, {
                                 title: '篮球场',
                                 desc: '走！一起打篮球啊！',
                                 preview: ball_3,
-                                path: '/pub/survey/'
+                                path: '/residence/ball/'
                             }, {
                                 title: '台球室',
                                 desc: '千万不要让你的白球进袋啦！',
                                 preview: ball_4,
-                                path: '/pub/healthLife/'
+                                path: '/residence/ball/'
                             }, {
                                 title: '乒乓球馆',
                                 desc: '来看我用国球战胜你！',
                                 preview: ball_5,
-                                path: '/pub/lost/'
+                                path: '/residence/ball/'
                             }, {
                                 title: '健身馆',
                                 desc: '来一次酣畅淋漓的出汗吧！',
                                 preview: ball_6,
-                                path: '/pub/need/'
+                                path: '/residence/ball/'
                             }, {
                                 title: '瑜伽馆',
                                 desc: '让你的身体带动心灵来一次放松和升华！',
                                 preview: ball_7,
-                                path: '/pub/need/'
+                                path: '/residence/ball/'
                             }
                         ]
                     }]
