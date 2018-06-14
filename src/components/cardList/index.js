@@ -11,6 +11,7 @@ class CardList extends React.Component {
         super(props);
 
         this.state = {
+            id: this.props.data.tabIndex,
             tabIndex: this.props.data.tabIndex,
             tabContent: this.props.data.tabContent
         };
@@ -40,17 +41,20 @@ class CardList extends React.Component {
             if(blankList.keys.findIndex(key => key === `${index}`) > -1) {
                 const content = _.find(blankList.contentList, {key: `${index}`}).tabContent;
                 this.setState({
+                    id: null,
                     tabIndex: index,
                     tabContent: content
                 });
             }else {
                 this.setState({
+                    id: index,
                     tabIndex: index,
                     tabContent: data.tabContent
                 });
             }
         }else{
             this.setState({
+                id: index,
                 tabIndex: index
             });
         }
@@ -79,7 +83,7 @@ class CardList extends React.Component {
     }
 
     render() {
-        const {tabIndex, tabContent} = this.state;
+        const {id, tabIndex, tabContent} = this.state;
         const {data} = this.props;
 
         return (
@@ -101,7 +105,7 @@ class CardList extends React.Component {
                             tabContent.map((item, index) => {
                                 return (
                                     <li key={index}
-                                        onClick={() => this.btnClick(item.path + (tabIndex ? data.tabs[tabIndex - 1].value : ''))}>
+                                        onClick={() => this.btnClick(item.path + (id ? data.tabs[id - 1].value : ''))}>
                                         <div className="wrap-img">
                                             <img src={item.preview}/>
                                         </div>
