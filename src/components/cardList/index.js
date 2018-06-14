@@ -92,7 +92,7 @@ class CardList extends React.Component {
                 <Flex justify="between" style={{marginTop: 20}}>
                     <h1 style={{fontSize: 20}}>{data.title}</h1>
                     {
-                        data.website ? (
+                        (data.website && tabIndex < 4) ? (
                             <span style={{fontSize: 14, color: '#888'}}
                                   onClick={() => this.btnClick(data.website + data.tabs[tabIndex - 1].value)}>企业官网<img
                                 src={arrow} style={{width: 10, marginLeft: 5}}/></span>

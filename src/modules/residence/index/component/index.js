@@ -40,19 +40,19 @@ class Index extends React.Component {
                         value: '5',
                         label: '教师公寓',
                     }, {
-                        value: '6',
+                        value: '10',
                         label: '运动场馆',
                     }, {
-                        value: '7',
+                        value: '6',
                         label: '学生公寓3号',
                     }, {
-                        value: '8',
+                        value: '7',
                         label: '学生公寓4号',
                     }, {
-                        value: '9',
+                        value: '8',
                         label: '学生公寓5号',
                     }, {
-                        value: '10',
+                        value: '9',
                         label: '学生公寓6号',
                     }
                 ],
