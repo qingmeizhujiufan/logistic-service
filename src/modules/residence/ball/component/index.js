@@ -34,6 +34,7 @@ class Residence extends React.Component {
         else if(id === '5') title = '乒乓球馆';
         else if(id === '6') title = '健身馆';
         else if(id === '7') title = '瑜伽馆';
+        else if(id === '8') title = '网球场';
 
         this.setState({
             title,

@@ -18,6 +18,7 @@ import ball_4 from 'Img/ball_4.png';
 import ball_5 from 'Img/ball_5.png';
 import ball_6 from 'Img/ball_6.png';
 import ball_7 from 'Img/ball_7.png';
+import ball_8 from 'Img/ball_8.png';
 
 class Index extends React.Component {
     constructor(props) {
@@ -129,6 +130,11 @@ class Index extends React.Component {
                                 desc: '让你的身体带动心灵来一次放松和升华！',
                                 preview: ball_7,
                                 path: '/residence/ball/7'
+                            }, {
+                                title: '网球场',
+                                desc: '感受贵族优雅的美丽！',
+                                preview: ball_8,
+                                path: '/residence/ball/8'
                             }
                         ]
                     }]
