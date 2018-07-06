@@ -113,7 +113,7 @@ class Need extends React.Component {
                       rows={5}
                       count={200}
                       onChange={this.onSugChange}
-                      placeholder='为了节省您的时间，您想吃什么，您想买什么，我们会按时送到您的房间。并请留下您的联系方式，微信，姓名等信息。具体每次收费标准待定。'
+                      placeholder='您学习辛苦了，为了节约您的时间，让您更好的学习，我们可以在我们能力范围内帮您预定或购买您现在需要的或回家时带给家人、朋友的礼物。如您有需求，就打电话或微信13627276627，有求必应哦！感谢您的关注！'
                     />
                   </List>
                   <WhiteSpace />
